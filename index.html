@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduQuiz - Master Your Knowledge</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="float-wrapper">
+        <div class="logo-glass">
+          <i class="bi bi-lightning zap"></i>
+        </div>
+      </div>
+
+      <h1 class="hero-title">EduQuiz</h1>
+
+      <p class="hero-desc">
+        Master your knowledge with AI-powered personalized quizzes. Learn
+        faster, retain more, and challenge yourself.
+      </p>
+
+      <div class="quote-box">
+        <p class="quote-text">
+          "Live as if you were to die tomorrow. Learn as if you were to live
+          forever."
+        </p>
+      </div>
+
+      <button class="start-btn">
+        <span id="startGame"> Start Game <i class="bi bi-play-fill"></i> </span>
+        <div class="btn-hover"></div>
+      </button>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value">0+</span>
+          <span>Questions</span>
+        </div>
+        <div class="divider"></div>
+        <div class="stat">
+          <span class="stat-value">0+</span>
+          <span>Categories</span>
+        </div>
+        <div class="divider"></div>
+        <div class="stat">
+          <span class="stat-value">AI</span>
+          <span>Powered</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.getElementById("startGame").addEventListener("click", () => {
+        window.location.href = "main.html";
+      });
+    </script>
+  </body>
+</html>

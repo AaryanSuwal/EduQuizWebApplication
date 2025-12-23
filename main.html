@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduQuiz - Master Your Knowledge</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="JavaScript/setting.js" defer></script>
+    <script src="JavaScript/categories.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-inner">
+          <div class="logo">
+            <div class="logo-icon">
+              <i class="bi bi-lightning"></i>
+            </div>
+            <span class="logo-text">EduQuiz</span>
+          </div>
+
+          <div class="nav-links">
+            <button onclick="goToSection('home')">Home</button>
+            <button onclick="goToSection('categories')">Categories</button>
+            <button onclick="goToSection('about')">About</button>
+          </div>
+
+          <div class="nav-actions">
+            <div class="search-box">
+              <i class="bi bi-search"></i>
+              <input
+                type="text"
+                placeholder="Search subjects..."
+                id="cat-search"
+                autocomplete="off"
+              />
+            </div>
+
+            <button class="icon-btn" title="Settings" onclick="openSettings()">
+              <i class="bi bi-gear"></i>
+            </button>
+
+            <!-- Avatar -->
+            <img
+              src="https://ui-avatars.com/api/?name=Student&background=6366f1&color=fff"
+              alt="User"
+              class="avatar"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="setting">
+      <div id="settingsOverlay" class="settings-overlay hidden">
+        <div class="settings-modal">
+          <div class="settings-header">
+            <h2>Settings</h2>
+            <button id="closeSettings" class="icon-btn">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+
+          <div class="settings-content">
+            <div class="settings-section">
+              <label>Appearance</label>
+              <div class="theme-buttons">
+                <button id="lightMode" class="theme-btn active">
+                  <i class="bi bi-sun"></i> Light
+                </button>
+                <button id="darkMode" class="theme-btn">
+                  <i class="bi bi-moon"></i> Dark
+                </button>
+              </div>
+            </div>
+
+            <div class="settings-section">
+              <label>Display Name</label>
+              <input
+                type="text"
+                id="usernameInput"
+                placeholder="Enter your name"
+              />
+            </div>
+
+            <div class="settings-section">
+              <button id="resetData" class="danger-btn">
+                <i class="bi bi-trash"></i> Reset Progress
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-footer">
+            <button id="saveSettings" class="save-btn">
+              <i class="bi bi-save"></i> Save Changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-container" id="home">
+      <section id="home" class="welcome-grid">
+        <!-- Welcome Card -->
+        <div class="welcome-card">
+          <div class="welcome-content">
+            <h2 class="welcome-title">Welcome back, Student!</h2>
+            <p class="welcome-desc">
+              Ready to challenge yourself today? Your learning journey starts
+              here.
+            </p>
+
+            <div class="stats-row">
+              <div class="stat-pill">
+                <i class="bi bi-clock stat-icon indigo"></i>
+                <div>
+                  <p class="stat-label">Time Spent</p>
+                  <p class="stat-value">0s</p>
+                </div>
+              </div>
+
+              <div class="stat-pill">
+                <i class="bi bi-award stat-icon yellow"></i>
+                <div>
+                  <p class="stat-label">Total Points</p>
+                  <p class="stat-value">0</p>
+                </div>
+              </div>
+
+              <div class="stat-pill">
+                <i class="bi bi-bar-chart stat-icon green"></i>
+                <div>
+                  <p class="stat-label">Accuracy</p>
+                  <p class="stat-value">0%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="streak-card">
+          <div>
+            <h3 class="streak-title">
+              <i class="bi bi-star-fill streak-icon"></i>
+              Daily Streak
+            </h3>
+
+            <div class="streak-count">
+              <span class="streak-number">0</span>
+              <span class="streak-label">Days</span>
+            </div>
+
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 0%"></div>
+            </div>
+
+            <p class="streak-hint">
+              Every expert started with day one. Begin now!
+            </p>
+          </div>
+
+          <button class="streak-btn">View Achievements</button>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <div class="section-header">
+          <span class="section-tag">Get Started</span>
+          <h2>How EduQuiz Works</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="icon blue">
+              <i class="bi bi-grid"></i>
+            </div>
+            <h3>1. Choose a Subject</h3>
+            <p>
+              Select from over 50+ categories including Science, Math, and
+              History.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="icon purple">
+              <i class="bi bi-lightning-charge"></i>
+            </div>
+            <h3>2. Play Quiz</h3>
+            <p>
+              Answer AI-generated questions. Race against time or play at your
+              own pace.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="icon green">
+              <i class="bi bi-award"></i>
+            </div>
+            <h3>3. Improve</h3>
+            <p>
+              Get instant feedback and detailed explanations to master your
+              knowledge.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-quizzes">
+        <div class="featured-header">
+          <div>
+            <h2>Featured Challenges</h2>
+            <p>Curated specially for you based on recent trends.</p>
+          </div>
+          <button class="view-all">View All</button>
+        </div>
+
+        <div class="quiz-grid">
+          <!-- Card 1 -->
+          <div class="quiz-card">
+            <div class="quiz-top">
+              <div class="quiz-icon pink">
+                <i class="bi bi-globe"></i>
+              </div>
+              <span class="difficulty">Hard</span>
+            </div>
+            <h3>World Capitals Tour</h3>
+            <p class="quiz-meta">10 Questions • 5 Minutes</p>
+
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%"></div>
+            </div>
+            <p class="quiz-status">Not started</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="quiz-card">
+            <div class="quiz-top">
+              <div class="quiz-icon orange">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <span class="difficulty">Hard</span>
+            </div>
+            <h3>Quantum Physics Basics</h3>
+            <p class="quiz-meta">10 Questions • 5 Minutes</p>
+
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%"></div>
+            </div>
+            <p class="quiz-status">Not started</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="quiz-card">
+            <div class="quiz-top">
+              <div class="quiz-icon pink">
+                <i class="bi bi-globe"></i>
+              </div>
+              <span class="difficulty">Hard</span>
+            </div>
+            <h3>World Capitals Tour</h3>
+            <p class="quiz-meta">10 Questions • 5 Minutes</p>
+
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%"></div>
+            </div>
+            <p class="quiz-status">Not started</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="quiz-card">
+            <div class="quiz-top">
+              <div class="quiz-icon orange">
+                <i class="bi bi-patch-question"></i>
+              </div>
+              <span class="difficulty">Hard</span>
+            </div>
+            <h3>Quantum Physics Basics</h3>
+            <p class="quiz-meta">10 Questions • 5 Minutes</p>
+
+            <div class="progress-bar">
+              <div class="progress" style="width: 0%"></div>
+            </div>
+            <p class="quiz-status">Not started</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="categories" class="categories-section">
+        <div class="categories-header">
+          <h2>Explore Subjects</h2>
+          <p>Dive deep into your favorite topics.</p>
+        </div>
+
+        <div id="categoriesGrid" class="categories-grid">
+          <!-- Categories injected by JS -->
+        </div>
+
+        <div id="noCategories" class="no-categories hidden">
+          <i class="bi bi-funnel"></i>
+          <p class="title">No subjects found</p>
+          <p class="subtitle">Try adjusting your search query</p>
+          <button id="resetBtn" class="reset-btn">Reset Filter</button>
+        </div>
+      </section>
+
+      
+      <section id="quizSetup" class="quiz-setup hidden"></section>
+    </main>
+    <script>
+      function goToSection(id) {
+        document.getElementById(id).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
