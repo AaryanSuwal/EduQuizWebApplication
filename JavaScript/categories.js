@@ -62,6 +62,11 @@ const emptyState = document.getElementById("noCategories");
 const searchInput = document.getElementById("cat-search");
 const resetButton = document.getElementById("resetBtn");
 
+document.addEventListener("DOMContentLoaded", () => {
+  const countCategory = CATEGORIES.length;
+  document.getElementById("categoryCount").textContent = countCategory + "+";
+});
+
 searchInput.addEventListener("input", (e) => {
   const value = e.target.value.trim().toLowerCase();
 
@@ -107,38 +112,66 @@ function renderCategories(list) {
     const quizSetupDiv = document.getElementById("quizSetup");
 
     card.onclick = () => {
-      // hide categories
-      grid.classList.add("hidden");
-      emptyState.classList.add("hidden");
+      const quizSetupDiv = document.getElementById("quizSetup");
 
-      // show quiz setup div
       quizSetupDiv.classList.remove("hidden");
 
-      // inject quiz setup HTML
       quizSetupDiv.innerHTML = `
-        <h2>${cat.name} Quiz</h2>
-        <p>${cat.description}</p>
+        <div class="quiz-card1">
+          <div class="quiz-header" style="background: ${cat.color}">
+            <div class="quiz-glow"></div>
+            <h2>${cat.name} Quiz</h2>
+            <p>Customize your learning experience</p>
+          </div>
 
-        <div>
-          <h3>Select Difficulty</h3>
-          <button onclick="startQuiz('${cat.id}', 'Easy')">Easy</button>
-          <button onclick="startQuiz('${cat.id}', 'Medium')">Medium</button>
-          <button onclick="startQuiz('${cat.id}', 'Hard')">Hard</button>
+          <div class="quiz-body">
+
+            <div class="quiz-section">
+              <h3>
+                <i class="bi bi-graph-up"></i>
+                Select Difficulty
+              </h3>
+              <div class="button-grid three">
+                <button class="difficulty-btn">Easy</button>
+                <button class="difficulty-btn active">Medium</button>
+                <button class="difficulty-btn">Hard</button>
+              </div>
+            </div>
+
+            <div class="quiz-section">
+              <h3>
+                <i class="bi bi-gear"></i>
+                Select Format
+              </h3>
+              <div class="button-grid">
+                <button class="format-btn active">
+                  <i class="bi bi-ui-checks"></i>
+                  <span>MCQ</span>
+                </button>
+                <button class="format-btn">
+                  <i class="bi bi-check2"></i>
+                  <span>True / False</span>
+                </button>
+                <button class="format-btn">
+                  <i class="bi bi-fonts"></i>
+                  <span>Fill Blanks</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="quiz-actions">
+              <button class="back-btn" id="backToCategories">Back</button>
+              <button class="start-btn">
+                Start Quiz
+              </button>
+            </div>
+
+          </div>
         </div>
-
-        <div>
-          <h3>Select Format</h3>
-          <button onclick="startQuiz('${cat.id}', '${cat.id}-MC')">Multiple Choice</button>
-          <button onclick="startQuiz('${cat.id}', '${cat.id}-TF')">True/False</button>
-          <button onclick="startQuiz('${cat.id}', '${cat.id}-FB')">Fill in Blanks</button>
-        </div>
-
-        <button id="backToCategories">Back</button>
       `;
 
       document.getElementById("backToCategories").onclick = () => {
         quizSetupDiv.classList.add("hidden");
-        grid.classList.remove("hidden");
       };
     };
 
@@ -147,3 +180,40 @@ function renderCategories(list) {
 }
 
 renderCategories(CATEGORIES);
+
+// Highlight the selected option on click -difficulty, and format
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".difficulty-btn")) {
+    const btn = e.target.closest(".difficulty-btn");
+    document
+      .querySelectorAll(".difficulty-btn")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  }
+
+  if (e.target.closest(".format-btn")) {
+    const btn = e.target.closest(".format-btn");
+    document
+      .querySelectorAll(".format-btn")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".start-btn")) {
+    const difficultyBtn = document.querySelector(".difficulty-btn.active");
+    const formatBtn = document.querySelector(".format-btn.active");
+
+    const difficulty = difficultyBtn?.innerText;
+    const format = formatBtn?.querySelector("span")?.innerText;
+
+    const quizHeader = document.querySelector(".quiz-header h2");
+    const category = quizHeader?.innerText.replace(" Quiz", "");
+
+    console.log("Category:", category);
+    console.log("Difficulty:", difficulty);
+    console.log("Format:", format);
+  }
+});
