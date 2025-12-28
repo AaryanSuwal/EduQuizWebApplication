@@ -1,0 +1,238 @@
+{
+  "math": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "What is 5 + 7?",
+          "options": ["10", "11", "12", "13"],
+          "answer": 2
+        },
+        {
+          "question": "What is the square of 4?",
+          "options": ["8", "12", "16", "20"],
+          "answer": 2
+        }
+      ],
+      "truefalse": [
+        {
+          "question": "Zero is an even number.",
+          "answer": true
+        }
+      ],
+      "fill": [
+        {
+          "question": "The value of π (pi) is approximately ____.",
+          "answer": "3.14"
+        }
+      ]
+    },
+
+    "medium": {
+      "mcq": [
+        {
+          "question": "What is the value of 3² + 4²?",
+          "options": ["25", "12", "7", "20"],
+          "answer": 0
+        }
+      ],
+      "truefalse": [
+        {
+          "question": "A triangle can have two right angles.",
+          "answer": false
+        }
+      ],
+      "fill": [
+        {
+          "question": "The formula for area of a circle is ____.",
+          "answer": "πr²"
+        }
+      ]
+    },
+
+    "hard": {
+      "mcq": [
+        {
+          "question": "What is the derivative of x²?",
+          "options": ["x", "2x", "x²", "2"],
+          "answer": 1
+        }
+      ]
+    }
+  },
+
+  "science": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "Which planet is known as the Red Planet?",
+          "options": ["Earth", "Mars", "Venus", "Jupiter"],
+          "answer": 1
+        }
+      ],
+      "truefalse": [
+        {
+          "question": "Plants need sunlight to make food.",
+          "answer": true
+        }
+      ],
+      "fill": [
+        {
+          "question": "Water freezes at ____ degrees Celsius.",
+          "answer": "0"
+        }
+      ]
+    },
+
+    "medium": {
+      "mcq": [
+        {
+          "question": "What gas do plants absorb from the atmosphere?",
+          "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
+          "answer": 2
+        }
+      ]
+    },
+
+    "hard": {
+      "mcq": [
+        {
+          "question": "Which particle has a negative charge?",
+          "options": ["Proton", "Neutron", "Electron", "Photon"],
+          "answer": 2
+        }
+      ]
+    }
+  },
+
+  "history": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "Who was the first President of the USA?",
+          "options": [
+            "Abraham Lincoln",
+            "George Washington",
+            "John Adams",
+            "Thomas Jefferson"
+          ],
+          "answer": 1
+        }
+      ],
+      "truefalse": [
+        {
+          "question": "The Great Wall of China was built in one year.",
+          "answer": false
+        }
+      ]
+    }
+  },
+
+  "tech": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "What does CPU stand for?",
+          "options": [
+            "Central Processing Unit",
+            "Computer Personal Unit",
+            "Central Program Utility",
+            "Control Processing Unit"
+          ],
+          "answer": 0
+        }
+      ],
+      "truefalse": [
+        {
+          "question": "HTML is a programming language.",
+          "answer": false
+        }
+      ],
+      "fill": [
+        {
+          "question": "CSS stands for ____ Style Sheets.",
+          "answer": "Cascading"
+        }
+      ]
+    },
+
+    "medium": {
+      "mcq": [
+        {
+          "question": "Which language is used for web styling?",
+          "options": ["HTML", "JavaScript", "CSS", "Python"],
+          "answer": 2
+        }
+      ]
+    }
+  },
+
+  "geo": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "What is the capital of France?",
+          "options": ["Rome", "Paris", "Berlin", "Madrid"],
+          "answer": 1
+        }
+      ],
+      "truefalse": [
+        {
+          "question": "Asia is the largest continent.",
+          "answer": true
+        }
+      ]
+    }
+  },
+
+  "lit": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "Who wrote 'Romeo and Juliet'?",
+          "options": [
+            "Charles Dickens",
+            "William Shakespeare",
+            "Jane Austen",
+            "Mark Twain"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  },
+
+  "art": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "Who painted the Mona Lisa?",
+          "options": [
+            "Van Gogh",
+            "Pablo Picasso",
+            "Leonardo da Vinci",
+            "Michelangelo"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  },
+
+  "gk": {
+    "easy": {
+      "mcq": [
+        {
+          "question": "Which is the largest ocean on Earth?",
+          "options": ["Atlantic", "Indian", "Arctic", "Pacific"],
+          "answer": 3
+        }
+      ],
+      "truefalse": [
+        {
+          "question": "The sun rises in the west.",
+          "answer": false
+        }
+      ]
+    }
+  }
+}
