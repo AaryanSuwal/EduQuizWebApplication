@@ -109,8 +109,6 @@ function renderCategories(list) {
       </div>
     `;
 
-    const quizSetupDiv = document.getElementById("quizSetup");
-
     card.onclick = () => {
       const quizSetupDiv = document.getElementById("quizSetup");
 
@@ -161,7 +159,7 @@ function renderCategories(list) {
 
             <div class="quiz-actions">
               <button class="back-btn" id="backToCategories">Back</button>
-              <button class="start-btn">
+              <button class="start-btn" id="startQuiz">
                 Start Quiz
               </button>
             </div>
@@ -174,11 +172,9 @@ function renderCategories(list) {
         quizSetupDiv.classList.add("hidden");
       };
     };
-
     grid.appendChild(card);
   });
 }
-
 renderCategories(CATEGORIES);
 
 // Highlight the selected option on click -difficulty, and format
@@ -198,22 +194,5 @@ document.addEventListener("click", (e) => {
       .querySelectorAll(".format-btn")
       .forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
-  }
-});
-
-document.addEventListener("click", (e) => {
-  if (e.target.closest(".start-btn")) {
-    const difficultyBtn = document.querySelector(".difficulty-btn.active");
-    const formatBtn = document.querySelector(".format-btn.active");
-
-    const difficulty = difficultyBtn?.innerText;
-    const format = formatBtn?.querySelector("span")?.innerText;
-
-    const quizHeader = document.querySelector(".quiz-header h2");
-    const category = quizHeader?.innerText.replace(" Quiz", "");
-
-    console.log("Category:", category);
-    console.log("Difficulty:", difficulty);
-    console.log("Format:", format);
   }
 });

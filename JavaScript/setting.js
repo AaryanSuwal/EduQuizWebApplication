@@ -6,7 +6,8 @@ const usernameInput = document.getElementById("usernameInput");
 const lightBtn = document.getElementById("lightMode");
 const darkBtn = document.getElementById("darkMode");
 
-const resetBtn = document.getElementById("resetData");
+const resetWarning = document.getElementById("resetWarning");
+const resetData = document.getElementById("resetData");
 
 // OPEN modal
 function openSettings() {
@@ -53,13 +54,20 @@ darkBtn.addEventListener("click", () => {
 });
 
 // RESET
-resetBtn.addEventListener("click", () => {
-  if (confirm("This will delete all progress. Continue?")) {
-    localStorage.clear();
-    alert("Progress reset.");
-    location.reload();
-  }
-});
+resetWrapper.onclick = () => {
+  resetData.classList.remove("hidden");
+  resetWrapper.classList.add("hidden");
+};
+
+cancelReset.onclick = () => {
+  resetData.classList.add("hidden");
+  resetWrapper.classList.remove("hidden");
+};
+
+confirmReset.onclick = () => {
+  localStorage.clear();
+  location.reload();
+};
 
 // LOAD SAVED SETTINGS
 window.addEventListener("DOMContentLoaded", () => {

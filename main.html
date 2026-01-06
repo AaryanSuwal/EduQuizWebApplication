@@ -15,6 +15,10 @@
     />
     <script src="JavaScript/setting.js" defer></script>
     <script src="JavaScript/categories.js" defer></script>
+    <script src="JavaScript/questions.js" defer></script>
+    <script src="JavaScript/quizSetup.js" defer></script>
+    <script src="JavaScript/quizPlay.js" defer></script>
+    <script src="JavaScript/recentAttempt.js" defer></script>
   </head>
   <body>
     <nav class="navbar">
@@ -91,12 +95,27 @@
               />
             </div>
 
-            <div class="settings-section">
-              <button id="resetData" class="danger-btn">
+            <div class="settings-section" id="resetWrapper">
+              <button id="resetWarning" class="danger-btn">
                 <i class="bi bi-trash"></i> Reset Progress
               </button>
             </div>
-          </div>
+
+            <div class="setting-extend-section hidden" id="resetData">
+              <div class="warning-title">
+                <i class="bi bi-exclamation-circle"></i>
+                <span>Are you sure?</span>
+              </div>
+              <div class="warning-msg">
+                <p>
+                  This will permanently delete your quiz history and streaks.
+                </p>
+              </div>
+              <div class="warning-actions">
+                <button id="cancelReset" class="cancel-btn">Cancel</button>
+                <button id="confirmReset" class="confirm-btn">Yes, Reset</button>
+              </div>
+            </div>
 
           <div class="settings-footer">
             <button id="saveSettings" class="save-btn">
@@ -309,16 +328,105 @@
           <button id="resetBtn" class="reset-btn">Reset Filter</button>
         </div>
       </section>
+
       <section id="quizSetup" class="quiz-setup hidden">
         <!-- Quiz setup content injected by JS -->
       </section>
+
+      <section id="loadingScreen" class="loading-screen hidden">
+        <div class="loader-card">
+          <div class="spinner"></div>
+          <h2 id="loadingTitle"></h2>
+          <p id="loadingDesc"></p>
+        </div>
+      </section>
+
+      <section id="quizPlay" class="quiz-play hidden">
+        <!-- quiz question + options will go here -->
+      </section>
+
+      <section class="recent-activity">
+        <div class="glow-bg"></div>
+
+        <div class="content">
+          <h2 class="title">Recent Activity</h2>
+
+          <div class="activity-card">
+            <div class="table-header">
+              <div class="col-span-2">Quiz Module</div>
+              <div>Performance</div>
+              <div class="text-right">Time Ago</div>
+            </div>
+
+            <!-- JS will insert rows here -->
+            <div id="activityList"></div>
+          </div>
+        </div>
+      </section>
+
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-icon">
+              <i class="bi bi-lightning-fill"></i>
+            </div>
+            <span class="logo-text">EduQuiz</span>
+          </div>
+
+          <p class="footer-desc">
+            The next generation of learning tools. Powered by AI, driven by
+            results, and tailored just for you.
+          </p>
+
+          <div class="social-links">
+            <button><i class="bi bi-twitter"></i></button>
+            <button><i class="bi bi-linkedin"></i></button>
+            <button><i class="bi bi-youtube"></i></button>
+          </div>
+        </div>
+
+        <!-- Platform -->
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li>
+              <button onclick="goToSection('home')">Performance Hub</button>
+            </li>
+            <li>
+              <button onclick="goToSection('categories')">Study Domains</button>
+            </li>
+            <li><button onclick="openSettings()">Account Sync</button></li>
+          </ul>
+        </div>
+
+        <!-- Compliance -->
+        <div class="footer-col">
+          <h4>Compliance</h4>
+          <ul>
+            <li><a href="#">Privacy Charter</a></li>
+            <li><a href="#">End User License</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span>. EDUQUIZ TECHNOLOGIES. ALL RIGHTS RESERVED.
+      </div>
+    </footer>
+
     <script>
       function goToSection(id) {
         document.getElementById(id).scrollIntoView({
           behavior: "smooth",
         });
       }
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
