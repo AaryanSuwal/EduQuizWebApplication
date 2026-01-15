@@ -13,6 +13,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <script src="JavaScript/stats.js" defer></script>
     <script src="JavaScript/setting.js" defer></script>
     <script src="JavaScript/categories.js" defer></script>
     <script src="JavaScript/questions.js" defer></script>
@@ -20,6 +21,7 @@
     <script src="JavaScript/quizPlay.js" defer></script>
     <script src="JavaScript/recentAttempt.js" defer></script>
   </head>
+
   <body>
     <nav class="navbar">
       <div class="nav-container">
@@ -52,23 +54,60 @@
               <i class="bi bi-gear"></i>
             </button>
 
-            <!-- Avatar -->
+            <!-- Hamburger (Mobile) -->
+            <button
+              class="icon-btn mobile-toggle"
+              onclick="toggleMobileMenu()"
+              aria-label="Toggle menu"
+            >
+              <i class="bi bi-list"></i>
+            </button>
+
             <img
               src="https://ui-avatars.com/api/?name=Student&background=6366f1&color=fff"
-              alt="User"
               class="avatar"
+              alt="User avatar"
             />
           </div>
         </div>
       </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="mobile-menu hidden">
+        <div class="mobile-menu-inner">
+          <div class="mobile-search">
+            <input
+              type="text"
+              id="mobileSearch"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </div>
+
+          <button onclick="goToSection('home'); toggleMobileMenu()">
+            Home
+          </button>
+          <button onclick="goToSection('categories'); toggleMobileMenu()">
+            Categories
+          </button>
+          <button onclick="goToSection('about'); toggleMobileMenu()">
+            About
+          </button>
+        </div>
+      </div>
     </nav>
 
+    <!-- Fixed settings modal structure - moved footer outside content -->
     <section id="setting">
       <div id="settingsOverlay" class="settings-overlay hidden">
         <div class="settings-modal">
           <div class="settings-header">
             <h2>Settings</h2>
-            <button id="closeSettings" class="icon-btn">
+            <button
+              id="closeSettings"
+              class="icon-btn"
+              aria-label="Close settings"
+            >
               <i class="bi bi-x-lg"></i>
             </button>
           </div>
@@ -113,9 +152,12 @@
               </div>
               <div class="warning-actions">
                 <button id="cancelReset" class="cancel-btn">Cancel</button>
-                <button id="confirmReset" class="confirm-btn">Yes, Reset</button>
+                <button id="confirmReset" class="confirm-btn">
+                  Yes, Reset
+                </button>
               </div>
             </div>
+          </div>
 
           <div class="settings-footer">
             <button id="saveSettings" class="save-btn">
@@ -142,7 +184,7 @@
                 <i class="bi bi-clock stat-icon indigo"></i>
                 <div>
                   <p class="stat-label">Time Spent</p>
-                  <p class="stat-value">0s</p>
+                  <p class="stat-value" id="timeSpend">0min</p>
                 </div>
               </div>
 
@@ -364,6 +406,77 @@
         </div>
       </section>
 
+      <section id="about" class="about">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="tag">THE VISION</span>
+            <h2>Empowering Learning Through AI</h2>
+            <p>
+              EduQuiz transforms static study material into interactive,
+              adaptive challenges. Our engine learns where you struggle and
+              provides targeted content to bridge your knowledge gaps.
+            </p>
+
+            <div class="stats">
+              <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <strong>Infinite Quizzes</strong>
+                <small>Generated on-demand</small>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-number green">98%</div>
+                <strong>Accuracy</strong>
+                <small>Verified sources</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <div class="glow"></div>
+
+            <div class="image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800"
+                alt="Students learning together"
+              />
+              <div class="image-overlay"></div>
+            </div>
+
+            <div class="user-box">
+              <div class="avatars">
+                <img src="https://i.pravatar.cc/100?img=11" alt="User avatar" />
+                <img src="https://i.pravatar.cc/100?img=12" alt="User avatar" />
+                <img src="https://i.pravatar.cc/100?img=13" alt="User avatar" />
+              </div>
+              <div>
+                <strong>Join 12k+</strong>
+                <small>Active Learners</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="help-section">
+        <div class="help-content">
+          <div class="help-text">
+            <h2>Stuck on a problem?</h2>
+            <p>
+              Our support team and extensive documentation library are here to
+              help you get the most out of your EduQuiz experience.
+            </p>
+          </div>
+
+          <div class="help-actions">
+            <button class="help-btn">
+              <span class="help-center">
+                <i class="bi bi-question-circle"></i> Help Center</span
+              >
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -384,9 +497,11 @@
           </p>
 
           <div class="social-links">
-            <button><i class="bi bi-twitter"></i></button>
-            <button><i class="bi bi-linkedin"></i></button>
-            <button><i class="bi bi-youtube"></i></button>
+            <button aria-label="Twitter"><i class="bi bi-twitter"></i></button>
+            <button aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </button>
+            <button aria-label="YouTube"><i class="bi bi-youtube"></i></button>
           </div>
         </div>
 
@@ -426,6 +541,13 @@
           behavior: "smooth",
         });
       }
+
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("hidden");
+      }
+
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>

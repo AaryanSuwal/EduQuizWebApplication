@@ -13,7 +13,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+    <script src="JavaScript/questions.js" defer></script>
     <script src="JavaScript/categories.js" defer></script>
+    <script src="JavaScript/stats.js" defer></script>
   </head>
   <body>
     <div class="hero">
@@ -37,7 +39,7 @@
         </p>
       </div>
 
-      <button class="start-btn">
+      <button class="start-btn" onclick="startQuiz()">
         <span id="startGame"> Start Game <i class="bi bi-play-fill"></i> </span>
         <div class="btn-hover"></div>
       </button>
@@ -59,10 +61,5 @@
         </div>
       </div>
     </div>
-    <script>
-      document.getElementById("startGame").addEventListener("click", () => {
-        window.location.href = "main.html";
-      });
-    </script>
   </body>
 </html>

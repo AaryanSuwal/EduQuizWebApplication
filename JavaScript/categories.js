@@ -62,11 +62,6 @@ const emptyState = document.getElementById("noCategories");
 const searchInput = document.getElementById("cat-search");
 const resetButton = document.getElementById("resetBtn");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const countCategory = CATEGORIES.length;
-  document.getElementById("categoryCount").textContent = countCategory + "+";
-});
-
 searchInput.addEventListener("input", (e) => {
   const value = e.target.value.trim().toLowerCase();
 

@@ -35,7 +35,7 @@ function renderRecentAttempts() {
     div.innerHTML = `
         <div class="activity-row">
             <div class="module">
-                <div class="icon-box">📘</div>
+                <div class="icon-box"><i class="bi bi-journal-text"></i></div>
                 <div>
                 <p class="module-title">${capitalize(item.category)}</p>
                 <p class="module-sub">
