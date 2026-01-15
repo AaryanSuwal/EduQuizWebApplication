@@ -19,26 +19,30 @@ body {
   position: relative;
   z-index: 10;
   min-height: 100vh;
-  padding: 0 16px;
+  /* Better mobile padding */
+  padding: 24px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .float-wrapper {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   animation: float 3s ease-in-out infinite;
 }
 
 .logo-glass {
-  margin-top: 40px;
-  width: 96px;
-  height: 96px;
+  /* Responsive logo size */
+  margin-top: 20px;
+  width: 72px;
+  height: 72px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
-  border-radius: 24px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +52,8 @@ body {
 }
 
 .zap {
-  font-size: 48px;
+  /* Responsive icon size */
+  font-size: 36px;
   color: #facc15;
 }
 
@@ -63,9 +68,10 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(3.5rem, 8vw, 6rem);
+  /* Better responsive font sizing */
+  font-size: clamp(2.5rem, 10vw, 6rem);
   font-weight: 800;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   letter-spacing: -2px;
   background: linear-gradient(90deg, #ffffff, #c7d2fe, #e9d5ff);
   background-clip: text;
@@ -74,38 +80,46 @@ body {
 }
 
 .hero-desc {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  /* Better responsive text and spacing */
+  font-size: clamp(1rem, 4vw, 1.5rem);
   color: #c7d2fe;
   max-width: 700px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   line-height: 1.6;
+  padding: 0 8px;
 }
 
 .quote-box {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(18px);
-  border-radius: 20px;
-  padding: 24px 32px;
+  border-radius: 16px;
+  /* Responsive padding */
+  padding: 16px 20px;
   max-width: 750px;
-  margin-bottom: 48px;
+  width: calc(100% - 32px);
+  margin-bottom: 32px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .quote-text {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  /* Better responsive quote text */
+  font-size: clamp(0.95rem, 3vw, 1.3rem);
   font-style: italic;
   color: #cbd5e1;
   font-family: serif;
+  line-height: 1.5;
 }
 
 .start-btn {
   position: relative;
-  padding: 16px 32px;
+  /* Responsive button padding */
+  padding: 14px 28px;
   background: white;
   color: #312e81;
   border-radius: 999px;
-  font-size: 1.5rem;
+  /* Responsive button font */
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
   font-weight: 700;
   border: none;
   cursor: pointer;
@@ -141,30 +155,202 @@ body {
 }
 
 .stats {
-  margin-top: 64px;
+  /* Responsive stats layout */
+  margin-top: 48px;
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
   color: #a5b4fc;
+  width: 100%;
+  padding: 0 16px;
 }
 
 .stat {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* Minimum width for stat items */
+  min-width: 70px;
 }
 
 .stat-value {
-  font-size: 1.6rem;
+  /* Responsive stat value */
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
   font-weight: 800;
   color: white;
 }
 
 .divider {
   width: 1px;
-  height: 40px;
+  height: 32px;
   background: rgba(99, 102, 241, 0.3);
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Small phones (max-width: 380px) */
+@media (max-width: 380px) {
+  .hero {
+    padding: 16px 12px;
+  }
+
+  .logo-glass {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+  }
+
+  .zap {
+    font-size: 28px;
+  }
+
+  .hero-title {
+    letter-spacing: -1px;
+  }
+
+  .quote-box {
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+
+  .stats {
+    gap: 12px;
+  }
+
+  .stat {
+    min-width: 60px;
+  }
+
+  .divider {
+    height: 24px;
+  }
+
+  .start-btn {
+    padding: 12px 24px;
+  }
+}
+
+/* Tablets and larger phones (min-width: 480px) */
+@media (min-width: 480px) {
+  .float-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .logo-glass {
+    width: 80px;
+    height: 80px;
+    margin-top: 30px;
+  }
+
+  .zap {
+    font-size: 40px;
+  }
+
+  .hero-desc {
+    margin-bottom: 40px;
+  }
+
+  .quote-box {
+    padding: 20px 28px;
+    border-radius: 18px;
+  }
+
+  .stats {
+    gap: 24px;
+    font-size: 0.8rem;
+  }
+
+  .divider {
+    height: 36px;
+  }
+}
+
+/* Medium devices (min-width: 640px) */
+@media (min-width: 640px) {
+  .hero {
+    padding: 32px 24px;
+  }
+
+  .logo-glass {
+    width: 88px;
+    height: 88px;
+    margin-top: 40px;
+  }
+
+  .zap {
+    font-size: 44px;
+  }
+
+  .hero-title {
+    margin-bottom: 20px;
+  }
+
+  .hero-desc {
+    margin-bottom: 48px;
+    padding: 0;
+  }
+
+  .quote-box {
+    padding: 24px 32px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+  }
+
+  .start-btn {
+    padding: 16px 32px;
+  }
+
+  .stats {
+    gap: 32px;
+    margin-top: 56px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  .stat {
+    min-width: 80px;
+  }
+
+  .divider {
+    height: 40px;
+  }
+}
+
+/* Large devices (min-width: 768px) */
+@media (min-width: 768px) {
+  .logo-glass {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+  }
+
+  .zap {
+    font-size: 48px;
+  }
+
+  .hero-title {
+    margin-bottom: 24px;
+  }
+
+  .quote-box {
+    margin-bottom: 48px;
+  }
+
+  .stats {
+    margin-top: 64px;
+  }
+}
+
+/* Extra large devices (min-width: 1024px) */
+@media (min-width: 1024px) {
+  .hero {
+    padding: 40px 32px;
+  }
 }

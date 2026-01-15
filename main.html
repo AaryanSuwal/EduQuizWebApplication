@@ -20,6 +20,8 @@
     <script src="JavaScript/quizSetup.js" defer></script>
     <script src="JavaScript/quizPlay.js" defer></script>
     <script src="JavaScript/recentAttempt.js" defer></script>
+    <!-- Added mobile search script -->
+    <script src="JavaScript/mobileSearch.js" defer></script>
   </head>
 
   <body>
@@ -60,13 +62,14 @@
               onclick="toggleMobileMenu()"
               aria-label="Toggle menu"
             >
-              <i class="bi bi-list"></i>
+              <i class="bi bi-list" id="mobileMenuIcon"></i>
             </button>
 
             <img
               src="https://ui-avatars.com/api/?name=Student&background=6366f1&color=fff"
               class="avatar"
               alt="User avatar"
+              id="userAvatar"
             />
           </div>
         </div>
@@ -79,8 +82,9 @@
             <input
               type="text"
               id="mobileSearch"
-              placeholder="Search..."
+              placeholder="Search subjects..."
               aria-label="Search"
+              autocomplete="off"
             />
           </div>
 
@@ -169,11 +173,13 @@
     </section>
 
     <main class="main-container" id="home">
-      <section id="home" class="welcome-grid">
+      <section class="welcome-grid">
         <!-- Welcome Card -->
         <div class="welcome-card">
           <div class="welcome-content">
-            <h2 class="welcome-title">Welcome back, Student!</h2>
+            <h2 class="welcome-title">
+              Welcome back, <span id="welcomeName">Student</span>!
+            </h2>
             <p class="welcome-desc">
               Ready to challenge yourself today? Your learning journey starts
               here.
@@ -192,7 +198,7 @@
                 <i class="bi bi-award stat-icon yellow"></i>
                 <div>
                   <p class="stat-label">Total Points</p>
-                  <p class="stat-value">0</p>
+                  <p class="stat-value" id="totalPoints">0</p>
                 </div>
               </div>
 
@@ -200,7 +206,7 @@
                 <i class="bi bi-bar-chart stat-icon green"></i>
                 <div>
                   <p class="stat-label">Accuracy</p>
-                  <p class="stat-value">0%</p>
+                  <p class="stat-value" id="accuracy">0%</p>
                 </div>
               </div>
             </div>
@@ -215,12 +221,16 @@
             </h3>
 
             <div class="streak-count">
-              <span class="streak-number">0</span>
+              <span class="streak-number" id="streakCount">0</span>
               <span class="streak-label">Days</span>
             </div>
 
             <div class="progress-track">
-              <div class="progress-fill" style="width: 0%"></div>
+              <div
+                class="progress-fill"
+                id="streakProgress"
+                style="width: 0%"
+              ></div>
             </div>
 
             <p class="streak-hint">
@@ -280,6 +290,7 @@
             <h2>Featured Challenges</h2>
             <p>Curated specially for you based on recent trends.</p>
           </div>
+          <button class="view-all">View All</button>
         </div>
 
         <div class="quiz-grid">
@@ -395,9 +406,9 @@
 
           <div class="activity-card">
             <div class="table-header">
-              <div class="col-span-2">Quiz Module</div>
+              <div>Quiz Module</div>
               <div>Performance</div>
-              <div class="text-right">Time Ago</div>
+              <div>Time Ago</div>
             </div>
 
             <!-- JS will insert rows here -->
@@ -470,9 +481,7 @@
 
           <div class="help-actions">
             <button class="help-btn">
-              <span class="help-center">
-                <i class="bi bi-question-circle"></i> Help Center</span
-              >
+              <i class="bi bi-question-circle"></i> Help Center
             </button>
           </div>
         </div>
@@ -531,7 +540,7 @@
       </div>
 
       <div class="footer-bottom">
-        © <span id="year"></span>. EDUQUIZ TECHNOLOGIES. ALL RIGHTS RESERVED.
+        © <span id="year"></span> EDUQUIZ TECHNOLOGIES. ALL RIGHTS RESERVED.
       </div>
     </footer>
 
@@ -543,9 +552,20 @@
       }
 
       const mobileMenu = document.getElementById("mobileMenu");
+      const mobileMenuIcon = document.getElementById("mobileMenuIcon");
 
       function toggleMobileMenu() {
+        const isHidden = mobileMenu.classList.contains("hidden");
         mobileMenu.classList.toggle("hidden");
+
+        // Toggle icon between hamburger and X
+        if (isHidden) {
+          mobileMenuIcon.classList.remove("bi-list");
+          mobileMenuIcon.classList.add("bi-x-lg");
+        } else {
+          mobileMenuIcon.classList.remove("bi-x-lg");
+          mobileMenuIcon.classList.add("bi-list");
+        }
       }
 
       document.getElementById("year").textContent = new Date().getFullYear();
