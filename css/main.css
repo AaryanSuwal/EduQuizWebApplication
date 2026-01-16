@@ -1688,6 +1688,22 @@ body.dark {
   color: #9ca3af;
 }
 
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #6366f1;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
 .question-card {
   width: 100%;
   background-color: #ffffff;
