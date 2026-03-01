@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduQuiz - AI Powered Learning Platform</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/landing.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo">
+        <i data-lucide="zap"></i>
+        <span>EduQuiz</span>
+      </div>
+
+      <div class="nav-buttons">
+        <button onclick="goAuth()">Log In</button>
+        <button class="primary-btn" onclick="goAuth()">Get Started</button>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <h1>
+        Master Your Knowledge with<br />
+        <span>EduQuiz Intelligence</span>
+      </h1>
+
+      <p>
+        EduQuiz adapts to your learning style. Create custom quizzes, track your
+        progress, and climb the leaderboard with our advanced AI-driven engines.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="start-btn" onclick="goAuth()">
+          Start Learning Now
+          <i data-lucide="play"></i>
+        </button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <i data-lucide="check-circle"></i>
+          <span>Flexible Categories</span>
+        </div>
+
+        <div class="stat">
+          <i data-lucide="check-circle"></i>
+          <span>Real-time Analytics</span>
+        </div>
+
+        <div class="stat">
+          <i data-lucide="check-circle"></i>
+          <span>Community Leaderboards</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      © <span id="year"></span> EDUQUIZ TECHNOLOGIES. ALL RIGHTS RESERVED.
+    </footer>
+
+    <!-- JS -->
+    <script>
+      // Load icons
+      lucide.createIcons();
+
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Navigation handler for guest users
+      function goAuth() {
+        window.location.href = "pages/auth.html";
+      }
+
+      // Check Authentication Status
+      document.addEventListener("DOMContentLoaded", () => {
+        const authSession = localStorage.getItem("eduquiz_user");
+        if (authSession) {
+          const userData = JSON.parse(authSession);
+
+          // Get Avatar from settings or fallback to Picsum
+          const savedProfile = localStorage.getItem("userProfile_v2");
+          let avatarUrl = "https://picsum.photos/seed/alex/100/100";
+          if (savedProfile) {
+            const profileData = JSON.parse(savedProfile);
+            if (profileData.avatar) avatarUrl = profileData.avatar;
+          }
+
+          // Replace Nav Buttons with Profile Shortcut
+          const navButtons = document.querySelector(".nav-buttons");
+          if (navButtons) {
+            navButtons.innerHTML = `
+              <div class="landing-user-profile" onclick="window.location.href='pages/home.html'" title="Go to Dashboard">
+                <img src="${avatarUrl}" alt="Profile" class="landing-avatar">
+                <span class="landing-username">${userData.name}</span>
+              </div>
+            `;
+          }
+
+          // Update Main Hero Button
+          const startBtn = document.querySelector(".start-btn");
+          if (startBtn) {
+            startBtn.innerHTML = `Enter Dashboard <i data-lucide="arrow-right"></i>`;
+            startBtn.onclick = () => (window.location.href = "pages/home.html");
+            // Re-render icons since we injected HTML
+            lucide.createIcons();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

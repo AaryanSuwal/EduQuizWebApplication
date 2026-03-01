@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center - EduQuiz</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/help-center.css" />
+    <!-- Google Fonts: Outfit -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Desktop Sidebar (Sync with latest Categories) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>EduQuiz</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav custom-scrollbar">
+        <!-- General -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">General</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html"
+                ><i data-lucide="home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard.html"
+                ><i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Learning -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Learning</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="categories.html"
+                ><i data-lucide="grid"></i> <span>Categories</span></a
+              >
+            </li>
+            <li>
+              <a href="daily-quiz.html"
+                ><i data-lucide="calendar"></i> <span>Daily Quiz</span></a
+              >
+            </li>
+            <li>
+              <a href="history.html"
+                ><i data-lucide="history"></i> <span>History</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Account</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="profile.html"
+                ><i data-lucide="user"></i> <span>Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i data-lucide="settings"></i> <span>Settings</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Support</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="feedback.html"
+                ><i data-lucide="message-square"></i> <span>Feedback</span></a
+              >
+            </li>
+            <li>
+              <a href="help-center.html" class="active"
+                ><i data-lucide="help-circle"></i> <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a href="privacy.html"
+                ><i data-lucide="shield"></i> <span>Privacy</span></a
+              >
+            </li>
+            <li>
+              <a href="terms.html"
+                ><i data-lucide="file-text"></i> <span>Terms</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="profile-link">
+          <div class="profile-img-container">
+            <img
+              src="https://picsum.photos/seed/alex/100/100"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="online-indicator"></div>
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Alex Morgan</p>
+            <span class="profile-plan">Pro Plan</span>
+          </div>
+          <i data-lucide="chevron-right" class="profile-arrow"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <div class="brand-container">
+          <div class="brand-icon mobile">
+            <i data-lucide="zap"></i>
+          </div>
+          <span class="brand-name">EduQuiz</span>
+        </div>
+        <div class="mobile-profile">
+          <img src="https://picsum.photos/seed/alex/100/100" alt="Profile" />
+        </div>
+      </header>
+
+      <!-- 1️⃣ Hero Section with Search -->
+      <section class="help-hero slide-up">
+        <div class="hero-glow-1"></div>
+        <div class="hero-glow-2"></div>
+
+        <div class="hero-inner">
+          <div class="hero-icon-bg">
+            <i data-lucide="life-buoy"></i>
+          </div>
+          <h1>How can we help you?</h1>
+          <p>Search for answers or browse topics below.</p>
+
+          <div class="search-wrap">
+            <i data-lucide="search" class="search-icon"></i>
+            <input
+              type="text"
+              id="helpSearch"
+              placeholder="Search help articles..."
+              class="search-input"
+            />
+          </div>
+        </div>
+      </section>
+
+      <div class="help-container">
+        <!-- 2️⃣ Browse Categories -->
+        <section class="topic-grid-section slide-up">
+          <div class="section-header">
+            <h2 class="section-title">Explore Topics</h2>
+          </div>
+          <div class="topic-grid">
+            <button class="topic-card">
+              <div class="topic-icon-bg"><i data-lucide="book-open"></i></div>
+              <h3>Getting Started</h3>
+              <p>Learn the basics and set up your first quiz in minutes.</p>
+            </button>
+            <button class="topic-card">
+              <div class="topic-icon-bg"><i data-lucide="user"></i></div>
+              <h3>Account Security</h3>
+              <p>Manage your password, data, and privacy settings.</p>
+            </button>
+            <button class="topic-card">
+              <div class="topic-icon-bg"><i data-lucide="trophy"></i></div>
+              <h3>Points & Rewards</h3>
+              <p>Understand how scoring works and how to earn badges.</p>
+            </button>
+            <button class="topic-card">
+              <div class="topic-icon-bg"><i data-lucide="life-buoy"></i></div>
+              <h3>Technical Help</h3>
+              <p>Solutions for connectivity, loading, or app performance.</p>
+            </button>
+          </div>
+        </section>
+
+        <!-- 3️⃣ Divider Info -->
+        <div class="info-breaker slide-up">
+          <div class="breaker-pill">
+            <i data-lucide="help-circle"></i>
+            <span>Popular Questions</span>
+          </div>
+        </div>
+
+        <!-- 4️⃣ FAQ Accordion -->
+        <section class="faq-section slide-up delay-100">
+          <div class="faq-list" id="faqList">
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span>How do I recover my account?</span>
+                <i data-lucide="chevron-down"></i>
+              </button>
+              <div class="faq-content">
+                <p>
+                  EduQuiz uses social login. Simply use the same Google or Apple
+                  account to log back in. If you've lost access to those,
+                  contact our technical support team below.
+                </p>
+              </div>
+            </div>
+            <!-- Other FAQs remain similar but with improved text -->
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span>Is my data private and secure?</span>
+                <i data-lucide="chevron-down"></i>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Absolutely. We use industry-standard encryption to protect
+                  your quiz data and personal information. We never sell your
+                  data to third parties.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span>How do streaks work?</span>
+                <i data-lucide="chevron-down"></i>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Play at least one quiz every 24 hours to maintain your streak.
+                  Higher streaks unlock exclusive profile avatars and point
+                  multipliers!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- No Results State (Hidden by default) -->
+          <div id="noResults" class="no-results hidden">
+            <div class="no-results-icon">
+              <i data-lucide="search-x"></i>
+            </div>
+            <h3>No articles found</h3>
+            <p>
+              Try searching for different keywords or browse the topics above.
+            </p>
+          </div>
+        </section>
+
+        <!-- 5️⃣ Contact Support CTA -->
+        <section class="support-cta slide-up delay-200">
+          <div class="cta-inner">
+            <div class="cta-icon-bg">
+              <i data-lucide="message-square"></i>
+            </div>
+            <h2>Need more help?</h2>
+            <p>
+              Our support team is active 24/7. Reach out and we'll get back to
+              you as soon as possible.
+            </p>
+            <div class="cta-actions">
+              <a href="feedback.html" class="btn-full-white">Contact Us</a>
+              <a href="feedback.html" class="btn-outline-white"
+                >Send Feedback</a
+              >
+            </div>
+          </div>
+          <div class="cta-glow-1"></div>
+          <div class="cta-glow-2"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+      <a href="home.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="dashboard.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layers"></i></div>
+        <span>Explore</span>
+      </a>
+      <a href="profile.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="user"></i></div>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/help-center.js"></script>
+  </body>
+</html>

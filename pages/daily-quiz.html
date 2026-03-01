@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Challenge - EduQuiz</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/daily-quiz.css" />
+    <!-- Google Fonts: Outfit -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Desktop Sidebar (Same as Dashboard) -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>EduQuiz</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav custom-scrollbar">
+        <!-- General -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">General</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html"
+                ><i data-lucide="home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard.html"
+                ><i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Learning -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Learning</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="categories.html"
+                ><i data-lucide="grid"></i> <span>Categories</span></a
+              >
+            </li>
+            <li>
+              <a href="daily-quiz.html" class="active"
+                ><i data-lucide="calendar"></i> <span>Daily Quiz</span></a
+              >
+            </li>
+            <li>
+              <a href="history.html"
+                ><i data-lucide="history"></i> <span>History</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Account</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="profile.html"
+                ><i data-lucide="user"></i> <span>Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i data-lucide="settings"></i> <span>Settings</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Support</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="feedback.html"
+                ><i data-lucide="message-square"></i> <span>Feedback</span></a
+              >
+            </li>
+            <li>
+              <a href="help-center.html"
+                ><i data-lucide="help-circle"></i> <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a href="privacy.html"
+                ><i data-lucide="shield"></i> <span>Privacy</span></a
+              >
+            </li>
+            <li>
+              <a href="terms.html"
+                ><i data-lucide="file-text"></i> <span>Terms</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="profile-link">
+          <div class="profile-img-container">
+            <img
+              src="https://picsum.photos/seed/alex/100/100"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="online-indicator"></div>
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Alex Morgan</p>
+            <span class="profile-plan">Pro Plan</span>
+          </div>
+          <i data-lucide="chevron-right" class="profile-arrow"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <div class="brand-container">
+          <div class="brand-icon">
+            <i data-lucide="zap"></i>
+          </div>
+          <h1 class="brand-name">EduQuiz</h1>
+        </div>
+        <a href="profile.html" class="mobile-profile">
+          <img src="https://picsum.photos/seed/alex/100/100" alt="Profile" />
+        </a>
+      </header>
+
+      <div class="daily-quiz-container">
+        <!-- 1️⃣ Hero Section -->
+        <section class="daily-hero fade-in">
+          <div class="hero-bg-patterns">
+            <div class="cube-pattern"></div>
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+          </div>
+
+          <div class="hero-inner">
+            <div class="hero-content slide-up">
+              <div class="date-badge">
+                <i data-lucide="calendar"></i>
+                <span id="currentDate">Feb 28, 2026</span>
+              </div>
+
+              <h1 class="hero-title">Daily Challenge</h1>
+
+              <div class="hero-stats">
+                <div class="hero-stat-item">
+                  <i data-lucide="clock"></i>
+                  <span class="timer-val" id="timer">00h 00m 00s</span>
+                </div>
+                <div class="divider"></div>
+                <div class="hero-stat-item">
+                  <span class="reward-tag">Reward</span>
+                  <span class="reward-val">+50 XP</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="hero-action slide-up delay-100"
+              id="quizActionContainer"
+            >
+              <!-- Initial State: Start Button -->
+              <button id="startQuizBtn" class="btn-start-quiz group">
+                <span class="btn-text">Start Daily Quiz</span>
+                <i data-lucide="arrow-right" class="btn-icon"></i>
+              </button>
+            </div>
+
+            <!-- Completed State (Hidden by default) -->
+            <div id="completedState" class="completed-card slide-up hidden">
+              <div class="check-icon-wrapper">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <h3>Challenge Complete!</h3>
+              <p>Come back tomorrow for more.</p>
+              <button class="btn-results">View Results</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2️⃣ Daily Quiz Info Card -->
+        <div class="daily-info-strip slide-up delay-200">
+          <div class="info-item">
+            <span class="info-lbl">Category</span>
+            <div class="info-val">
+              <i data-lucide="zap"></i>
+              Science
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-lbl">Difficulty</span>
+            <div class="info-val">
+              <i data-lucide="target"></i>
+              Hard
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="info-lbl">Questions</span>
+            <div class="info-val">10</div>
+          </div>
+          <div class="info-item">
+            <span class="info-lbl">Attempts</span>
+            <div class="info-val">1 / Day</div>
+          </div>
+        </div>
+
+        <div class="daily-grid">
+          <!-- 3️⃣ Streak & Consistency -->
+          <section class="panel-section slide-in-left delay-300">
+            <div class="panel-header">
+              <h3 class="panel-title">
+                <i data-lucide="flame" id="streakIcon"></i>
+                Streak Status
+              </h3>
+              <span class="best-streak-badge"
+                >Best: <span id="bestStreak">7</span> Days</span
+              >
+            </div>
+
+            <div class="streak-main">
+              <span class="streak-number" id="currentStreak">3</span>
+              <span class="streak-lbl">Day Streak</span>
+            </div>
+
+            <div class="streak-progress-bg">
+              <div
+                class="streak-progress-fill"
+                id="streakFill"
+                style="width: 60%"
+              ></div>
+            </div>
+
+            <div class="streak-footer">
+              <div class="day-tracker" id="dayTracker">
+                <!-- Days 1-5 markers -->
+              </div>
+              <div class="next-reward">
+                Next Reward: <span class="reward-highlight">+100 XP</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4️⃣ Your Progress -->
+          <section class="panel-section slide-in-right delay-300">
+            <div class="panel-header">
+              <h3 class="panel-title">
+                <i data-lucide="bar-chart-3"></i>
+                Your Progress
+              </h3>
+              <div class="trend-badge positive">
+                <i data-lucide="trending-up"></i>
+                +12%
+              </div>
+            </div>
+
+            <div class="progress-mini-grid">
+              <div class="mini-prog-box">
+                <span class="mini-lbl">Yesterday's Score</span>
+                <div class="mini-val">8/10</div>
+              </div>
+              <div class="mini-prog-box">
+                <span class="mini-lbl">Avg. Daily Score</span>
+                <div class="mini-val">76%</div>
+              </div>
+            </div>
+
+            <div class="prog-footer">
+              <div class="prog-lbl-row">
+                <span>Weekly Improvement</span>
+                <span>Good</span>
+              </div>
+              <div class="mini-progress-bg">
+                <div class="mini-progress-fill" style="width: 75%"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- 5️⃣ Daily Motivation -->
+        <section class="motivation-banner slide-up delay-300">
+          <div class="banner-line"></div>
+          <p class="quote">
+            "Small efforts repeated daily create big results."
+          </p>
+          <span class="quote-tag">Daily Wisdom</span>
+        </section>
+      </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation (Same as Dashboard) -->
+    <nav class="mobile-bottom-nav">
+      <a href="home.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="dashboard.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layers"></i></div>
+        <span>Explore</span>
+      </a>
+      <a href="daily-quiz.html" class="nav-item active">
+        <div class="nav-icon"><i data-lucide="zap"></i></div>
+        <span>Daily</span>
+      </a>
+    </nav>
+
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/daily-quiz.js"></script>
+  </body>
+</html>

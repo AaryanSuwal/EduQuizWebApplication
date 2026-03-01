@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduQuiz - Elevate Your Intelligence</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <!-- Desktop Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>EduQuiz</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav custom-scrollbar">
+        <!-- General -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">General</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html" class="active"
+                ><i data-lucide="home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard.html"
+                ><i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- History -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Learning</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="categories.html"
+                ><i data-lucide="grid"></i> <span>Categories</span></a
+              >
+            </li>
+            <li>
+              <a href="daily-quiz.html"
+                ><i data-lucide="calendar"></i> <span>Daily Quiz</span></a
+              >
+            </li>
+            <li>
+              <a href="history.html"
+                ><i data-lucide="history"></i> <span>History</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Account</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="profile.html"
+                ><i data-lucide="user"></i> <span>Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i data-lucide="settings"></i> <span>Settings</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Support</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="feedback.html"
+                ><i data-lucide="message-square"></i> <span>Feedback</span></a
+              >
+            </li>
+            <li>
+              <a href="help-center.html"
+                ><i data-lucide="help-circle"></i> <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a href="privacy.html"
+                ><i data-lucide="shield"></i> <span>Privacy</span></a
+              >
+            </li>
+            <li>
+              <a href="terms.html"
+                ><i data-lucide="file-text"></i> <span>Terms</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="profile-link">
+          <div class="profile-img-container">
+            <img
+              src="https://picsum.photos/seed/alex/100/100"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="online-indicator"></div>
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Alex Morgan</p>
+            <span class="profile-plan">Pro Plan</span>
+          </div>
+          <i data-lucide="chevron-right" class="profile-arrow"></i>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <div class="brand-container">
+        <div class="brand-icon mobile">
+          <i data-lucide="zap"></i>
+        </div>
+        <span class="brand-name">EduQuiz</span>
+      </div>
+      <div class="mobile-profile">
+        <img src="https://picsum.photos/seed/alex/100/100" alt="Profile" />
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Home Specific Content -->
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="bg-pattern"></div>
+        <div class="bg-gradient overlay"></div>
+        <div class="abstract-circle circle-1"></div>
+        <div class="abstract-circle circle-2"></div>
+
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i data-lucide="zap"></i>
+              <span>The Evolution of Learning</span>
+            </div>
+            <h1 class="hero-title">
+              Challenge <br />
+              Your Mind. <br />
+              <span class="highlight-text">Elevate Intelligence.</span>
+            </h1>
+            <p class="hero-desc">
+              EduQuiz is the rigorous mental gymnasium designed for the
+              ambitious. Test limits, track growth, and dominate your
+              intellectual pursuits.
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="floating-card active-session">
+              <div class="card-header">
+                <div class="window-controls">
+                  <div class="dot red"></div>
+                  <div class="dot yellow"></div>
+                  <div class="dot green"></div>
+                </div>
+                <span class="session-label">Live Session</span>
+              </div>
+              <div class="card-body">
+                <div class="user-block">
+                  <div class="user-icon">
+                    <i data-lucide="brain"></i>
+                  </div>
+                  <div class="user-lines">
+                    <div class="line l1"></div>
+                    <div class="line l2"></div>
+                  </div>
+                </div>
+                <div class="activity-chart">
+                  <div class="chart-bg"></div>
+                  <div class="bars">
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 50%"></div>
+                    <div class="bar" style="height: 90%"></div>
+                    <div class="bar" style="height: 60%"></div>
+                    <div class="bar" style="height: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-icon icon-1">
+              <i data-lucide="target"></i>
+            </div>
+            <div class="floating-icon icon-2">
+              <i data-lucide="trophy"></i>
+            </div>
+            <div class="hero-glow"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Proof Section -->
+      <section class="social-proof">
+        <div class="container social-proof-container">
+          <p class="section-subtitle">Trusted by learners from</p>
+          <div class="logo-strip">
+            <span>Stanford</span>
+            <span>MIT</span>
+            <span>Harvard</span>
+            <span>Oxford</span>
+            <span>Cambridge</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section">
+        <div class="texture-overlay"></div>
+        <div class="container about-container">
+          <h2 class="section-title">Designed for the Ambitious Mind</h2>
+          <p class="section-desc">
+            EduQuiz bridges the gap between passive learning and active recall.
+            We've built a platform that respects your intelligence and demands
+            your best.
+          </p>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <i data-lucide="target" class="feature-icon"></i>
+              <h3 class="feature-title">Precision Learning</h3>
+              <p class="feature-text">
+                Curated content for 15+ audiences that challenges critical
+                thinking.
+              </p>
+            </div>
+            <div class="feature-card">
+              <i data-lucide="layers" class="feature-icon"></i>
+              <h3 class="feature-title">Multi-Format</h3>
+              <p class="feature-text">
+                From rapid-fire drills to deep logical reasoning puzzles.
+              </p>
+            </div>
+            <div class="feature-card">
+              <i data-lucide="users" class="feature-icon"></i>
+              <h3 class="feature-title">Competitive Edge</h3>
+              <p class="feature-text">
+                Test your skills against a global community of scholars.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Game Modes Section -->
+      <section class="modes-section">
+        <div class="container">
+          <header class="modes-header">
+            <h2 class="section-title">Diverse Game Modes</h2>
+            <p class="section-desc">
+              Choose how you want to challenge yourself.
+            </p>
+          </header>
+
+          <div class="modes-grid">
+            <div class="mode-card glass">
+              <div class="mode-icon-wrapper">
+                <i data-lucide="list-checks"></i>
+              </div>
+              <h3 class="mode-title">Multiple Choice</h3>
+              <p class="mode-desc">
+                The classic format. One right answer, three distractors.
+              </p>
+            </div>
+            <div class="mode-card glass">
+              <div class="mode-icon-wrapper">
+                <i data-lucide="check-circle-2"></i>
+              </div>
+              <h3 class="mode-title">True or False</h3>
+              <p class="mode-desc">Quick decision making. Fact or fiction?</p>
+            </div>
+            <div class="mode-card glass">
+              <div class="mode-icon-wrapper">
+                <i data-lucide="type"></i>
+              </div>
+              <h3 class="mode-title">Fill in Blanks</h3>
+              <p class="mode-desc">
+                Test your recall with no hints to guide you.
+              </p>
+            </div>
+            <div class="mode-card glass">
+              <div class="mode-icon-wrapper">
+                <i data-lucide="timer"></i>
+              </div>
+              <h3 class="mode-title">Rapid Fire</h3>
+              <p class="mode-desc">
+                Race against the clock. Speed is your only ally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Breaker Marquee -->
+      <div class="marquee-breaker">
+        <div class="marquee-content" id="marquee">
+          <!-- Content injected via JS for infinite loop effect -->
+        </div>
+      </div>
+
+      <!-- Domains Section -->
+      <section class="domains-section">
+        <div class="container relative z-10">
+          <h2 class="section-title domain-title">Knowledge Domains</h2>
+          <div class="domains-grid">
+            <div class="domain-card">
+              <i data-lucide="flask-conical"></i>
+              <span>Science</span>
+            </div>
+            <div class="domain-card">
+              <i data-lucide="cpu"></i>
+              <span>Technology</span>
+            </div>
+            <div class="domain-card">
+              <i data-lucide="calculator"></i>
+              <span>Mathematics</span>
+            </div>
+            <div class="domain-card">
+              <i data-lucide="landmark"></i>
+              <span>History</span>
+            </div>
+            <div class="domain-card">
+              <i data-lucide="globe"></i>
+              <span>Gen. Knowledge</span>
+            </div>
+            <div class="domain-card">
+              <i data-lucide="puzzle"></i>
+              <span>Logic</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Section -->
+      <section class="why-choose-section">
+        <div class="container relative z-10">
+          <div class="split-grid">
+            <div class="why-content">
+              <h2 class="section-title">Why Top Students Choose EduQuiz</h2>
+              <p class="section-desc">
+                We focus on what matters: improving your cognitive abilities
+                through structured, data-driven gameplay.
+              </p>
+              <ul class="benefit-list">
+                <li>
+                  <div class="benefit-icon">
+                    <i data-lucide="brain-circuit"></i>
+                  </div>
+                  <span>Enhances critical thinking & problem solving</span>
+                </li>
+                <li>
+                  <div class="benefit-icon"><i data-lucide="trophy"></i></div>
+                  <span>Competitive gameplay with global rankings</span>
+                </li>
+                <li>
+                  <div class="benefit-icon"><i data-lucide="zap"></i></div>
+                  <span>Instant feedback for accelerated learning</span>
+                </li>
+                <li>
+                  <div class="benefit-icon">
+                    <i data-lucide="smartphone"></i>
+                  </div>
+                  <span>Fully responsive mobile-first design</span>
+                </li>
+                <li>
+                  <div class="benefit-icon"><i data-lucide="save"></i></div>
+                  <span>Progress saved locally automatically</span>
+                </li>
+              </ul>
+            </div>
+            <div class="why-visual">
+              <div class="glow-bg"></div>
+              <div class="streak-card glass">
+                <div class="streak-header">
+                  <h3 class="streak-title">
+                    <i data-lucide="zap"></i> Daily Momentum
+                  </h3>
+                  <span class="streak-badge"
+                    ><span class="pulse-dot"></span> Active</span
+                  >
+                </div>
+                <div class="streak-body">
+                  <div class="streak-circle-outer animate-pulse">
+                    <i data-lucide="zap" class="streak-icon"></i>
+                    <div class="streak-check">
+                      <i data-lucide="check-circle-2"></i>
+                    </div>
+                  </div>
+                  <div class="streak-stats">
+                    <div class="streak-days">7 Days</div>
+                    <div class="streak-label">Current Streak</div>
+                  </div>
+                </div>
+                <div class="streak-footer">
+                  Keep it up! You're building a powerful habit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Path Section -->
+      <section class="path-section bg-white">
+        <div class="container relative z-10">
+          <div class="split-grid path-grid">
+            <div class="path-visual">
+              <div class="path-card">
+                <div class="path-badge">Your Journey</div>
+                <div class="path-steps relative">
+                  <div class="path-line"></div>
+                  <div class="step completed">
+                    <div class="step-icon">
+                      <i data-lucide="check-circle-2"></i>
+                    </div>
+                    <div class="step-info">
+                      <h4>Foundations of Logic</h4>
+                      <span>Completed</span>
+                    </div>
+                  </div>
+                  <div class="step current">
+                    <div class="step-icon">
+                      <i data-lucide="brain-circuit"></i>
+                    </div>
+                    <div class="step-info">
+                      <h4>Advanced Pattern Recognition</h4>
+                      <span>In Progress</span>
+                    </div>
+                  </div>
+                  <div class="step locked">
+                    <div class="step-icon"><i data-lucide="timer"></i></div>
+                    <div class="step-info">
+                      <h4>Speed Calculation Drills</h4>
+                      <span>Locked</span>
+                    </div>
+                  </div>
+                  <div class="step locked">
+                    <div class="step-icon"><i data-lucide="trophy"></i></div>
+                    <div class="step-info">
+                      <h4>Mastery Assessment</h4>
+                      <span>Locked</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="path-content">
+              <div class="hero-badge">
+                <i data-lucide="brain"></i>
+                <span>Adaptive Curriculum</span>
+              </div>
+              <h2 class="section-title">A Path Unique to You</h2>
+              <p class="section-desc text-large">
+                No two brains are alike. Our AI constructs a personalized
+                learning roadmap that evolves with every answer you give,
+                ensuring you're always challenged but never overwhelmed.
+              </p>
+              <ul class="path-benefits">
+                <li>
+                  <i data-lucide="check-circle-2"></i> Dynamic difficulty
+                  adjustment
+                </li>
+                <li>
+                  <i data-lucide="check-circle-2"></i> Gap analysis and targeted
+                  review
+                </li>
+                <li>
+                  <i data-lucide="check-circle-2"></i> Spaced repetition for
+                  long-term retention
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Premium Testimonials Spotlight Slider -->
+      <section class="testimonials-section">
+        <div class="container">
+          <div class="testimonial-header">
+            <div class="section-badge">
+              <i data-lucide="award"></i> Wall of Scholars
+            </div>
+            <h2>Voices from the Future</h2>
+            <p>
+              Real experiences from students who transformed their learning
+              habits with our AI-driven adaptive logic.
+            </p>
+          </div>
+
+          <div class="slider-viewport" id="testimonialSlider">
+            <div class="testimonial-track">
+              <!-- Slide 1 -->
+              <div class="test-slide active" data-index="0">
+                <div class="test-pfp-large">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200"
+                    alt="Sarah"
+                  />
+                </div>
+                <div class="test-text">
+                  "The adaptive engine is terrifyingly accurate. It caught my
+                  recursion weak spots before I even realized them myself. Truly
+                  a level ahead."
+                </div>
+                <div class="test-author-box">
+                  <h4>Sarah J. Morgan</h4>
+                  <p>Computer Science @ MIT</p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="test-slide" data-index="1">
+                <div class="test-pfp-large">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
+                    alt="Alex"
+                  />
+                </div>
+                <div class="test-text">
+                  "I cut my USMLE prep time in half. The Nano Banana engine
+                  focuses with surgical precision on the gaps in my medical
+                  knowledge. It's my secret weapon."
+                </div>
+                <div class="test-author-box">
+                  <h4>Alex Chen</h4>
+                  <p>Medical Resident, Stanford</p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="test-slide" data-index="2">
+                <div class="test-pfp-large">
+                  <img
+                    src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200&h=200"
+                    alt="Marcus"
+                  />
+                </div>
+                <div class="test-text">
+                  "EduQuiz doesn't just feel like a platform; it feels like a
+                  personalized tutor. The gamification makes 2 hours of studying
+                  fly by like as if it was 15 minutes."
+                </div>
+                <div class="test-author-box">
+                  <h4>Marcus Thorne</h4>
+                  <p>Senior Analyst, Goldman Sachs</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider-controls">
+              <button class="ctrl-btn prev-btn" id="prevTest">
+                <i data-lucide="arrow-left"></i>
+              </button>
+              <button class="ctrl-btn next-btn" id="nextTest">
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dot Navigation -->
+          <div class="dot-nav" id="testDots">
+            <button class="test-dot active" data-index="0"></button>
+            <button class="test-dot" data-index="1"></button>
+            <button class="test-dot" data-index="2"></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="cta-bg-pattern"></div>
+        <div class="cta-overlay"></div>
+
+        <div class="container cta-container">
+          <h2 class="cta-title">Ready to Test Your Knowledge?</h2>
+          <p class="cta-desc">
+            Join thousands of other learners and start your journey to mastery
+            today.
+          </p>
+          <div class="cta-actions">
+            <a href="categories.html" class="btn-cta-primary">
+              <span>Get Started Now</span>
+              <i data-lucide="zap"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Footer inside main content -->
+      <footer class="main-footer">
+        <div class="container">
+          <div class="footer-grid">
+            <!-- Brand -->
+            <div class="footer-brand">
+              <div class="footer-logo">
+                <div class="brand-icon small">
+                  <i data-lucide="zap"></i>
+                </div>
+                <span class="brand-text-footer">EduQuiz</span>
+              </div>
+              <p class="footer-desc">
+                Empowering learners worldwide with interactive quizzes and
+                personalized progress tracking. Master any subject, one question
+                at a time.
+              </p>
+              <div class="social-links">
+                <a href="#" aria-label="Twitter"
+                  ><i data-lucide="twitter"></i
+                ></a>
+                <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                <a href="#" aria-label="Linkedin"
+                  ><i data-lucide="linkedin"></i
+                ></a>
+                <a href="#" aria-label="Instagram"
+                  ><i data-lucide="instagram"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-links-col">
+              <h4>Product</h4>
+              <ul>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="daily-quiz.html">Daily Quiz</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+              </ul>
+            </div>
+            <div class="footer-links-col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help-center.html">Careers</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="feedback.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-links-col">
+              <h4>Support</h4>
+              <ul>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="help-center.html">Help Center</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+              </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+              <h4>Stay Updated</h4>
+              <p>Get the latest quiz challenges and learning tips.</p>
+              <form class="newsletter-form" id="newsletterForm">
+                <div class="input-wrapper">
+                  <i data-lucide="mail" class="mail-icon"></i>
+                  <input
+                    type="email"
+                    id="newsletterEmail"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-subscribe"
+                  id="newsletterBtn"
+                >
+                  <span>Subscribe</span>
+                  <i data-lucide="arrow-right"></i>
+                </button>
+                <div id="newsletterMessage" class="newsletter-message"></div>
+              </form>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>
+              &copy; <span id="year"></span> EduQuiz Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+      <a href="home.html" class="nav-item active">
+        <div class="nav-icon"><i data-lucide="home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="dashboard.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="grid"></i></div>
+        <span>Categories</span>
+      </a>
+      <a href="profile.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="user"></i></div>
+        <span>Profile</span>
+      </a>
+    </div>
+
+    <!-- External JS -->
+    <script src="../javascript/main.js"></script>
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

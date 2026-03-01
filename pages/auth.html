@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduQuiz | Secure Authentication</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/auth.css" />
+
+    <!-- JavaScript -->
+    <script src="../javascript/auth.js" defer></script>
+  </head>
+  <body>
+    <div class="auth-container">
+      <!-- Left Side (Billboard) -->
+      <div class="auth-left">
+        <nav class="auth-navbar">
+          <div class="auth-logo">
+            <i data-lucide="zap"></i>
+            <span>EduQuiz</span>
+          </div>
+        </nav>
+
+        <div class="auth-quote-section">
+          <div class="quote-box">
+            <h2>
+              "This platform has completely transformed how we manage our team's
+              intelligence growth. It's intuitive, fast, and incredibly
+              reliable."
+            </h2>
+          </div>
+          <div class="review-card">
+            <img
+              src="https://picsum.photos/seed/sarah/100/100"
+              alt="User"
+              class="review-avatar"
+            />
+            <div class="review-info">
+              <p class="review-name">Sarah Jenkins</p>
+              <p class="review-role">CTO, Tech Innovators Inc.</p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="auth-footer">
+          <div class="footer-links">
+            <a href="404.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="404.html">Terms of Service</a>
+          </div>
+          <p>&copy; <span id="year"></span> EduQuiz. All rights reserved.</p>
+        </footer>
+      </div>
+
+      <!-- Right Side (Form) -->
+      <div class="auth-right">
+        <div class="login-container">
+          <div class="mobile-logo">
+            <i data-lucide="zap"></i>
+          </div>
+
+          <header class="auth-header">
+            <h2 id="form-title">Welcome Back</h2>
+            <p id="form-desc">Please enter your details to sign in.</p>
+          </header>
+
+          <!-- Login Section -->
+          <form id="login-form" class="auth-form">
+            <div class="form-group">
+              <label for="login-email">Email address</label>
+              <div class="input-wrapper">
+                <i data-lucide="mail" class="input-icon"></i>
+                <input
+                  type="email"
+                  id="login-email"
+                  placeholder="someone@example.com"
+                  required
+                />
+                <span class="validate hidden"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <div class="input-wrapper">
+                <i data-lucide="lock" class="input-icon"></i>
+                <input
+                  type="password"
+                  id="login-password"
+                  class="password-field"
+                  placeholder="••••••••"
+                  required
+                />
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Toggle password"
+                >
+                  <i data-lucide="eye" class="eye-icon"></i>
+                </button>
+                <span class="validate hidden"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Sign In</button>
+
+            <div class="divider"><span>or continue with</span></div>
+
+            <div class="signin-option">
+              <button type="button" class="btn-secondary">
+                <i data-lucide="chrome"></i> Google
+              </button>
+              <button type="button" class="btn-secondary">
+                <i data-lucide="github"></i> GitHub
+              </button>
+            </div>
+          </form>
+
+          <!-- Signup section -->
+          <form id="signup-form" class="auth-form hidden">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <div class="input-wrapper">
+                <i data-lucide="user" class="input-icon"></i>
+                <input type="text" id="signup-name" placeholder="John Doe" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-email">Email address</label>
+              <div class="input-wrapper">
+                <i data-lucide="mail" class="input-icon"></i>
+                <input
+                  type="email"
+                  id="signup-email"
+                  placeholder="someone@example.com"
+                />
+                <span class="validate hidden"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="signup-password">Create Password</label>
+              <div class="input-wrapper">
+                <i data-lucide="lock" class="input-icon"></i>
+                <input
+                  type="password"
+                  id="signup-password"
+                  class="password-field"
+                  placeholder="••••••••"
+                />
+                <button type="button" class="password-toggle">
+                  <i data-lucide="eye"></i>
+                </button>
+                <span class="validate hidden"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+              <div class="input-wrapper">
+                <i data-lucide="shield-check" class="input-icon"></i>
+
+                <input
+                  type="password"
+                  id="confirm-password"
+                  class="password-field"
+                  placeholder="••••••••"
+                />
+
+                <button
+                  type="button"
+                  class="password-toggle"
+                  aria-label="Toggle password"
+                >
+                  <i data-lucide="eye" class="eye-icon"></i>
+                </button>
+
+                <span class="validate hidden"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary">Create Account</button>
+
+            <div class="divider"><span>or continue with</span></div>
+
+            <div class="signin-option">
+              <button type="button" class="btn-secondary">
+                <i data-lucide="chrome"></i> Google
+              </button>
+              <button type="button" class="btn-secondary">
+                <i data-lucide="github"></i> GitHub
+              </button>
+            </div>
+          </form>
+
+          <p class="form-toggle">
+            <span id="toggle-msg">Don't have an account?</span>
+            <button id="toggle-btn" class="toggle-btn">Sign up for free</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS for Footer Date -->
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

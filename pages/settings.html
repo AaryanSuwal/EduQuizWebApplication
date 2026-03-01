@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - EduQuiz</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/settings.css" />
+    <!-- Google Fonts: Outfit -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Desktop Sidebar (Same as Dashboard) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>EduQuiz</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav custom-scrollbar">
+        <!-- General -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">General</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html"
+                ><i data-lucide="home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard.html"
+                ><i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Learning -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Learning</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="categories.html"
+                ><i data-lucide="grid"></i> <span>Categories</span></a
+              >
+            </li>
+            <li>
+              <a href="daily-quiz.html"
+                ><i data-lucide="calendar"></i> <span>Daily Quiz</span></a
+              >
+            </li>
+            <li>
+              <a href="history.html"
+                ><i data-lucide="history"></i> <span>History</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Account</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="profile.html"
+                ><i data-lucide="user"></i> <span>Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="settings.html" class="active"
+                ><i data-lucide="settings"></i> <span>Settings</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Support</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="feedback.html"
+                ><i data-lucide="message-square"></i> <span>Feedback</span></a
+              >
+            </li>
+            <li>
+              <a href="help-center.html"
+                ><i data-lucide="help-circle"></i> <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a href="privacy.html"
+                ><i data-lucide="shield"></i> <span>Privacy</span></a
+              >
+            </li>
+            <li>
+              <a href="terms.html"
+                ><i data-lucide="file-text"></i> <span>Terms</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="profile-link">
+          <div class="profile-img-container">
+            <img
+              src="https://picsum.photos/seed/alex/100/100"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="online-indicator"></div>
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Alex Morgan</p>
+            <span class="profile-plan">Pro Plan</span>
+          </div>
+          <i data-lucide="chevron-right" class="profile-arrow"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <div class="brand-container">
+          <div class="brand-icon mobile">
+            <i data-lucide="zap"></i>
+          </div>
+          <span class="brand-name">EduQuiz</span>
+        </div>
+        <div class="mobile-profile">
+          <img src="https://picsum.photos/seed/alex/100/100" alt="Profile" />
+        </div>
+      </header>
+
+      <div class="settings-container">
+        <header class="settings-header slide-up">
+          <h1>Settings</h1>
+        </header>
+
+        <div class="settings-sections-list">
+          <!-- 1️⃣ Account Section -->
+          <section class="settings-section slide-up delay-100">
+            <h2 class="section-lbl">Account</h2>
+            <div class="settings-card">
+              <div class="profile-edit-block">
+                <div class="edit-avatar">
+                  <img
+                    src="https://picsum.photos/seed/alex/200/200"
+                    alt="Profile"
+                    id="settingsAvatar"
+                  />
+                  <button class="btn-avatar-cam" id="changeAvatarBtn">
+                    <i data-lucide="camera"></i>
+                  </button>
+                  <input type="file" id="avatarInput" hidden accept="image/*" />
+                </div>
+                <div class="edit-inputs-grid">
+                  <div class="field-group">
+                    <label for="username">Username</label>
+                    <input
+                      type="text"
+                      id="username"
+                      placeholder="Alex Morgan"
+                    />
+                  </div>
+                  <div class="field-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="alex.morgan@example.com"
+                    />
+                  </div>
+                  <button class="btn-primary" id="saveProfileBtn">
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+
+              <div class="card-links-group">
+                <button class="card-link-item" id="passwordSecurityBtn">
+                  <div class="item-left">
+                    <div class="icon-circle"><i data-lucide="shield"></i></div>
+                    <div class="item-text">
+                      <span class="title">Password & Security</span>
+                      <span class="desc">Manage your password and 2FA</span>
+                    </div>
+                  </div>
+                  <i data-lucide="chevron-right" class="chevron"></i>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 2️⃣ App Preferences & Subscription Column -->
+          <div class="settings-column">
+            <!-- Appearance -->
+            <section class="settings-section slide-up delay-200">
+              <h2 class="section-lbl">App Preferences</h2>
+              <div class="settings-card">
+                <div class="toggle-item">
+                  <div class="item-left">
+                    <div class="icon-circle"><i data-lucide="moon"></i></div>
+                    <div class="item-text">
+                      <span class="title">Dark Mode</span>
+                      <span class="desc">Adjust the appearance of the app</span>
+                    </div>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="darkModeToggle" />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+
+                <div class="toggle-item">
+                  <div class="item-left">
+                    <div class="icon-circle">
+                      <i data-lucide="volume-2"></i>
+                    </div>
+                    <div class="item-text">
+                      <span class="title">Sound Effects</span>
+                      <span class="desc">Play sounds during quizzes</span>
+                    </div>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="soundToggle" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+
+                <div class="card-links-group border-top">
+                  <button class="card-link-item" id="languageBtn">
+                    <div class="item-left">
+                      <div class="icon-circle"><i data-lucide="globe"></i></div>
+                      <div class="item-text">
+                        <span class="title">Language</span>
+                        <span class="desc" id="currentLangDesc"
+                          >Currently set to English</span
+                        >
+                      </div>
+                    </div>
+                    <div class="item-right">
+                      <span class="val-text" id="currentLangVal">English</span>
+                      <i data-lucide="chevron-right" class="chevron"></i>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Subscription & Plan -->
+            <section class="settings-section slide-up delay-300">
+              <h2 class="section-lbl">Subscription & Plan</h2>
+              <div class="settings-card subscription-card">
+                <div class="toggle-item">
+                  <div class="item-left">
+                    <div class="icon-circle premium">
+                      <i data-lucide="crown"></i>
+                    </div>
+                    <div class="item-text">
+                      <div class="title-row">
+                        <span class="title">Current Plan</span>
+                        <span class="badge-pro" id="currentPlanBadge">PRO</span>
+                      </div>
+                      <span class="desc" id="planRenewsDesc"
+                        >Renews on Oct 12, 2026</span
+                      >
+                    </div>
+                  </div>
+                  <button class="btn-primary-ghost">Manage Plan</button>
+                </div>
+
+                <button class="card-link-item border-top">
+                  <div class="item-left">
+                    <div class="icon-circle">
+                      <i data-lucide="credit-card"></i>
+                    </div>
+                    <div class="item-text">
+                      <span class="title">Payment Method</span>
+                      <span class="desc">Visa ending in 4242</span>
+                    </div>
+                  </div>
+                  <i data-lucide="chevron-right" class="chevron"></i>
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <!-- 3️⃣ Notifications & Support Column -->
+          <div class="settings-column">
+            <!-- Notifications -->
+            <section class="settings-section slide-up delay-300">
+              <h2 class="section-lbl">Notifications</h2>
+              <div class="settings-card">
+                <div class="toggle-item">
+                  <div class="item-left">
+                    <div class="icon-circle">
+                      <i data-lucide="smartphone"></i>
+                    </div>
+                    <div class="item-text">
+                      <span class="title">Push Notifications</span>
+                      <span class="desc"
+                        >Receive daily reminders and updates</span
+                      >
+                    </div>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="pushToggle" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+
+                <div class="toggle-item">
+                  <div class="item-left">
+                    <div class="icon-circle"><i data-lucide="mail"></i></div>
+                    <div class="item-text">
+                      <span class="title">Email Updates</span>
+                      <span class="desc">Weekly progress reports</span>
+                    </div>
+                  </div>
+                  <label class="switch">
+                    <input type="checkbox" id="emailToggle" checked />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <!-- Data & Support -->
+            <section class="settings-section slide-up delay-300">
+              <h2 class="section-lbl">Data & Support</h2>
+              <div class="settings-card">
+                <button class="card-link-item" id="exportDataBtn">
+                  <div class="item-left">
+                    <div class="icon-circle">
+                      <i data-lucide="download"></i>
+                    </div>
+                    <div class="item-text">
+                      <span class="title">Export Data</span>
+                      <span class="desc">Download your quiz history</span>
+                    </div>
+                  </div>
+                  <i data-lucide="chevron-right" class="chevron"></i>
+                </button>
+
+                <button class="card-link-item">
+                  <div class="item-left">
+                    <div class="icon-circle">
+                      <i data-lucide="help-circle"></i>
+                    </div>
+                    <div class="item-text">
+                      <span class="title">Help & Support</span>
+                      <span class="desc">FAQs and contact support</span>
+                    </div>
+                  </div>
+                  <i data-lucide="chevron-right" class="chevron"></i>
+                </button>
+
+                <button class="card-link-item delete-account-btn border-top">
+                  <div class="item-left">
+                    <div class="icon-circle"><i data-lucide="trash-2"></i></div>
+                    <div class="item-text">
+                      <span class="title">Delete Account</span>
+                      <span class="desc">Permanently remove your data</span>
+                    </div>
+                  </div>
+                </button>
+
+                <button class="card-link-item border-top" id="logoutBtn">
+                  <div class="item-left">
+                    <div class="icon-circle"><i data-lucide="log-out"></i></div>
+                    <div class="item-text">
+                      <span class="title">Log Out</span>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <div class="version-info">
+            <p>EduQuiz v1.0.0 • Built with ❤️</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+      <a href="home.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="dashboard.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layers"></i></div>
+        <span>Explore</span>
+      </a>
+      <a href="settings.html" class="nav-item active">
+        <div class="nav-icon"><i data-lucide="settings"></i></div>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <!-- Password & Security Modal -->
+    <div class="modal-overlay" id="passwordModal">
+      <div class="modal-content slide-up">
+        <div class="modal-header">
+          <div class="header-icon-circle"><i data-lucide="lock"></i></div>
+          <div class="header-text">
+            <h2>Password & Security</h2>
+            <p>Update your password to keep your account secure.</p>
+          </div>
+          <button class="btn-close-modal" id="closePasswordModal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <form class="modal-body" id="passwordForm">
+          <div class="field-group">
+            <div class="label-row">
+              <label for="currentPassword">Current Password</label>
+              <button type="button" class="btn-link-sm" id="forgotPasswordBtn">
+                Forgot Password?
+              </button>
+            </div>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="currentPassword"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                type="button"
+                class="btn-toggle-pass"
+                data-target="currentPassword"
+              >
+                <i data-lucide="eye"></i>
+              </button>
+            </div>
+            <div class="error-msg" id="currPassError"></div>
+          </div>
+
+          <div class="field-group">
+            <label for="newPassword">New Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="newPassword"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                type="button"
+                class="btn-toggle-pass"
+                data-target="newPassword"
+              >
+                <i data-lucide="eye"></i>
+              </button>
+            </div>
+            <div class="error-msg" id="newPassError"></div>
+          </div>
+
+          <div class="field-group">
+            <label for="confirmPassword">Confirm New Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="••••••••"
+                required
+              />
+              <button
+                type="button"
+                class="btn-toggle-pass"
+                data-target="confirmPassword"
+              >
+                <i data-lucide="eye"></i>
+              </button>
+            </div>
+            <div class="error-msg" id="confirmPassError"></div>
+          </div>
+
+          <div class="security-note">
+            <i data-lucide="shield-check"></i>
+            <span>Passwords must be at least 8 characters long.</span>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" id="cancelPasswordBtn">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Update Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Language Selection Modal -->
+    <div class="modal-overlay" id="languageModal">
+      <div class="modal-content slide-up">
+        <div class="modal-header">
+          <div class="header-icon-circle"><i data-lucide="globe"></i></div>
+          <div class="header-text">
+            <h2>Select Language</h2>
+            <p>Choose your preferred language for the interface.</p>
+          </div>
+          <button class="btn-close-modal" id="closeLanguageModal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="modal-body p-0">
+          <div class="lang-list">
+            <button class="lang-item active" data-lang="English">
+              <div class="lang-info">
+                <span class="lang-name">English</span>
+              </div>
+              <div class="selection-box"><i data-lucide="check"></i></div>
+            </button>
+            <button class="lang-item" data-lang="Spanish">
+              <div class="lang-info">
+                <span class="lang-name">Spanish</span>
+              </div>
+              <div class="selection-box"><i data-lucide="check"></i></div>
+            </button>
+            <button class="lang-item" data-lang="French">
+              <div class="lang-info">
+                <span class="lang-name">French</span>
+              </div>
+              <div class="selection-box"><i data-lucide="check"></i></div>
+            </button>
+            <button class="lang-item" data-lang="German">
+              <div class="lang-info">
+                <span class="lang-name">German</span>
+              </div>
+              <div class="selection-box"><i data-lucide="check"></i></div>
+            </button>
+          </div>
+        </div>
+        <div class="modal-actions-footer">
+          <button type="button" class="btn-primary w-full" id="confirmLangBtn">
+            Confirm Selection
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/settings.js"></script>
+  </body>
+</html>

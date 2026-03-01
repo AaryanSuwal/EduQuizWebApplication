@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge Lab - EduQuiz Blog</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/blog.css" />
+  </head>
+  <body class="bg-body">
+    <!-- Desktop Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>EduQuiz</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav custom-scrollbar">
+        <!-- General -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">General</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html"
+                ><i data-lucide="home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard.html"
+                ><i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- History -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Learning</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="categories.html"
+                ><i data-lucide="grid"></i> <span>Categories</span></a
+              >
+            </li>
+            <li>
+              <a href="daily-quiz.html"
+                ><i data-lucide="calendar"></i> <span>Daily Quiz</span></a
+              >
+            </li>
+            <li>
+              <a href="history.html"
+                ><i data-lucide="history"></i> <span>History</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Account</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="profile.html"
+                ><i data-lucide="user"></i> <span>Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i data-lucide="settings"></i> <span>Settings</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Support</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="feedback.html"
+                ><i data-lucide="message-square"></i> <span>Feedback</span></a
+              >
+            </li>
+            <li>
+              <a href="help-center.html"
+                ><i data-lucide="help-circle"></i> <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a href="privacy.html"
+                ><i data-lucide="shield"></i> <span>Privacy</span></a
+              >
+            </li>
+            <li>
+              <a href="terms.html"
+                ><i data-lucide="file-text"></i> <span>Terms</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="profile-link">
+          <div class="profile-img-container">
+            <img
+              src="https://picsum.photos/seed/alex/100/100"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="online-indicator"></div>
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Alex Morgan</p>
+            <span class="profile-plan">Pro Plan</span>
+          </div>
+          <i data-lucide="chevron-right" class="profile-arrow"></i>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <div class="brand-container">
+        <div class="brand-icon mobile">
+          <i data-lucide="zap"></i>
+        </div>
+        <span class="brand-name">EduQuiz</span>
+      </div>
+      <div class="mobile-profile">
+        <img src="https://picsum.photos/seed/alex/100/100" alt="Profile" />
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Section 1: Hero Centered -->
+      <section class="blog-hero-v3">
+        <div class="container">
+          <div class="hero-content-center slide-up">
+            <h1 class="hero-title-main">
+              Gaming Intel & <br /><span class="gradient-text"
+                >Tech Insights</span
+              >
+            </h1>
+            <p class="hero-subtitle">
+              Expert analysis, hardware reviews, and the latest news from the
+              digital frontier.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Category Filter -->
+      <section class="category-section-v3">
+        <div class="container">
+          <div class="cat-pill-wrapper">
+            <button class="cat-pill-v3 active">All Articles</button>
+            <button class="cat-pill-v3">Game News</button>
+            <button class="cat-pill-v3">Tech Trends</button>
+            <button class="cat-pill-v3">Hardware</button>
+            <button class="cat-pill-v3">Reviews</button>
+            <button class="cat-pill-v3">E-sports</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Article Grid -->
+      <section class="article-grid-section-v3">
+        <div class="container">
+          <div class="article-grid-v3">
+            <!-- Art Card 1 -->
+            <article class="art-card-v3 slide-up">
+              <div class="art-img-box">
+                <span class="art-badge-v3">Game News</span>
+                <img
+                  src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800"
+                  alt="E-sports"
+                />
+              </div>
+              <div class="art-body-v3">
+                <div class="art-meta-v3">
+                  <span><i data-lucide="calendar"></i> Oct 24, 2023</span>
+                  <span><i data-lucide="clock"></i> 5 min read</span>
+                </div>
+                <h3 class="art-title-v3">
+                  The Rise of Procedural Generation in Modern RPGs
+                </h3>
+                <p class="art-excerpt-v3">
+                  Discover how developers are using AI and procedural logic to
+                  create infinite, immersive worlds without sacrificing
+                  narrative depth...
+                </p>
+                <div class="art-footer-v3">
+                  <div class="author-box">
+                    <img src="https://i.pravatar.cc/150?u=a" alt="Author" />
+                    <span>Emma Thompson</span>
+                  </div>
+                  <a href="#" class="read-more-link"
+                    >Read More <i data-lucide="arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Art Card 2 -->
+            <article class="art-card-v3 slide-up delay-100">
+              <div class="art-img-box">
+                <span class="art-badge-v3">Tech Trends</span>
+                <img
+                  src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800"
+                  alt="Tech"
+                />
+              </div>
+              <div class="art-body-v3">
+                <div class="art-meta-v3">
+                  <span><i data-lucide="calendar"></i> Oct 22, 2023</span>
+                  <span><i data-lucide="clock"></i> 8 min read</span>
+                </div>
+                <h3 class="art-title-v3">
+                  Quantum Computing: Are We Closer to the Gaming Holy Grail?
+                </h3>
+                <p class="art-excerpt-v3">
+                  Explore the breakthroughs in quantum processing and what they
+                  mean for the future of real-time physics and ultra-realistic
+                  lighting...
+                </p>
+                <div class="art-footer-v3">
+                  <div class="author-box">
+                    <img src="https://i.pravatar.cc/150?u=b" alt="Author" />
+                    <span>Sarah Adams</span>
+                  </div>
+                  <a href="#" class="read-more-link"
+                    >Read More <i data-lucide="arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Art Card 3 -->
+            <article class="art-card-v3 slide-up delay-200">
+              <div class="art-img-box">
+                <span class="art-badge-v3">Hardware</span>
+                <img
+                  src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80&w=800"
+                  alt="Hardware"
+                />
+              </div>
+              <div class="art-body-v3">
+                <div class="art-meta-v3">
+                  <span><i data-lucide="calendar"></i> Oct 20, 2023</span>
+                  <span><i data-lucide="clock"></i> 6 min read</span>
+                </div>
+                <h3 class="art-title-v3">
+                  The GPU Crisis is Over – But is High-End Gaming Still
+                  Affordable?
+                </h3>
+                <p class="art-excerpt-v3">
+                  With stock levels stabilizing, we analyze the current market
+                  value of flagship cards versus mid-range powerhouses for 2024
+                  setups...
+                </p>
+                <div class="art-footer-v3">
+                  <div class="author-box">
+                    <img src="https://i.pravatar.cc/150?u=c" alt="Author" />
+                    <span>Michael Chen</span>
+                  </div>
+                  <a href="#" class="read-more-link"
+                    >Read More <i data-lucide="arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Empty State -->
+            <div
+              id="blogEmptyState"
+              class="empty-state-v3"
+              style="display: none"
+            >
+              <div class="empty-icon-box">
+                <i data-lucide="search-x"></i>
+              </div>
+              <h3>No Intel Found</h3>
+              <p>
+                We couldn't find any articles in this category. Our field agents
+                are on it!
+              </p>
+              <button
+                class="btn-reset-filter"
+                onclick="document.querySelector('.cat-pill-v3').click()"
+              >
+                View All Articles
+              </button>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination-v3">
+            <button class="pg-btn"><i data-lucide="chevron-left"></i></button>
+            <button class="pg-num active">1</button>
+            <button class="pg-num">2</button>
+            <button class="pg-num">3</button>
+            <span class="pg-dots">...</span>
+            <button class="pg-num">10</button>
+            <button class="pg-btn"><i data-lucide="chevron-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Newsletter Horizontal -->
+      <section class="newsletter-section-v3">
+        <div class="container">
+          <div class="newsletter-card-v3">
+            <div class="newsletter-content-v3">
+              <h2>
+                Stay Ahead with <span class="brand-text-v3">EduQuiz</span>
+              </h2>
+              <p>
+                Get the latest game updates and tech breakthroughs delivered
+                straight to your inbox.
+              </p>
+            </div>
+            <form class="newsletter-form-v3" id="newsletterForm">
+              <div class="input-group-v3">
+                <input
+                  type="email"
+                  id="newsletterEmail"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="btn-subscribe-v3"
+                  id="newsletterBtn"
+                >
+                  Subscribe Now
+                </button>
+              </div>
+              <p class="privacy-note">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
+              <div id="newsletterMessage" class="newsletter-message"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+      <a href="home.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="dashboard.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="grid"></i></div>
+        <span>Categories</span>
+      </a>
+      <a href="blog.html" class="nav-item active">
+        <div class="nav-icon"><i data-lucide="book-open"></i></div>
+        <span>Blog</span>
+      </a>
+    </div>
+
+    <!-- External JS -->
+    <script src="../javascript/main.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

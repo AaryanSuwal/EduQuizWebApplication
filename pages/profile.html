@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Profile - EduQuiz</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <!-- Google Fonts: Outfit -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Desktop Sidebar (Sync with latest Categories) -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>EduQuiz</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav custom-scrollbar">
+        <!-- General -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">General</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html"
+                ><i data-lucide="home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard.html"
+                ><i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Learning -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Learning</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="categories.html"
+                ><i data-lucide="grid"></i> <span>Categories</span></a
+              >
+            </li>
+            <li>
+              <a href="daily-quiz.html"
+                ><i data-lucide="calendar"></i> <span>Daily Quiz</span></a
+              >
+            </li>
+            <li>
+              <a href="history.html"
+                ><i data-lucide="history"></i> <span>History</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Account</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="profile.html" class="active"
+                ><i data-lucide="user"></i> <span>Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i data-lucide="settings"></i> <span>Settings</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Support</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="feedback.html"
+                ><i data-lucide="message-square"></i> <span>Feedback</span></a
+              >
+            </li>
+            <li>
+              <a href="help-center.html"
+                ><i data-lucide="help-circle"></i> <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a href="privacy.html"
+                ><i data-lucide="shield"></i> <span>Privacy</span></a
+              >
+            </li>
+            <li>
+              <a href="terms.html"
+                ><i data-lucide="file-text"></i> <span>Terms</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="profile-link">
+          <div class="profile-img-container">
+            <img
+              src="https://picsum.photos/seed/alex/100/100"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="online-indicator"></div>
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Alex Morgan</p>
+            <span class="profile-plan">Pro Plan</span>
+          </div>
+          <i data-lucide="chevron-right" class="profile-arrow"></i>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <!-- Mobile Header -->
+      <header class="mobile-header">
+        <div class="brand-container">
+          <div class="brand-icon mobile">
+            <i data-lucide="zap"></i>
+          </div>
+          <span class="brand-name">EduQuiz</span>
+        </div>
+        <div class="mobile-profile">
+          <img src="https://picsum.photos/seed/alex/100/100" alt="Profile" />
+        </div>
+      </header>
+
+      <!-- 1️⃣ Profile Hero -->
+      <section class="profile-hero">
+        <div class="hero-decoration">
+          <div class="glow-blob blob-1"></div>
+          <div class="glow-blob blob-2"></div>
+          <div class="scribble-bg"></div>
+          <div class="dot-pattern"></div>
+        </div>
+
+        <div class="hero-inner">
+          <div class="profile-avatar-wrapper">
+            <div class="avatar-ring">
+              <img
+                id="profileAvatar"
+                src="https://picsum.photos/seed/alex/200/200"
+                alt="Profile"
+              />
+            </div>
+            <button
+              class="btn-change-avatar"
+              title="Change Avatar"
+              id="changeAvatarBtn"
+            >
+              <i data-lucide="camera"></i>
+            </button>
+            <input
+              type="file"
+              id="avatarInput"
+              accept="image/*"
+              class="hidden"
+            />
+          </div>
+
+          <div class="profile-info-main">
+            <div class="name-edit-row">
+              <div id="nameDisplay" class="display-name-mode">
+                <h1 id="userName">Alex Morgan</h1>
+                <button id="editNameBtn" class="btn-icon-sm">
+                  <i data-lucide="edit-2"></i>
+                </button>
+              </div>
+              <div id="nameEdit" class="edit-name-mode hidden">
+                <input type="text" id="nameInput" class="edit-input" />
+                <button id="saveNameBtn" class="btn-sm-primary">Save</button>
+                <button id="cancelNameBtn" class="btn-sm-ghost">Cancel</button>
+              </div>
+              <span class="level-badge" id="userLevel">Level 3</span>
+            </div>
+            <p
+              class="user-email"
+              id="userEmail"
+              style="color: #94a3b8; font-size: 1rem; margin-top: 0.25rem"
+            >
+              user@example.com
+            </p>
+
+            <p class="join-date">
+              <i data-lucide="calendar"></i>
+              Member since <span id="joinDate">Jan 2024</span>
+            </p>
+
+            <div class="top-stats-row">
+              <div class="hero-stat">
+                <div class="stat-icon-circle orange">
+                  <i data-lucide="flame"></i>
+                </div>
+                <div class="stat-content">
+                  <span class="val" id="streakVal">0</span>
+                  <span class="lbl">Day Streak</span>
+                </div>
+              </div>
+              <div class="hero-stat">
+                <div class="stat-icon-circle yellow">
+                  <i data-lucide="star"></i>
+                </div>
+                <div class="stat-content">
+                  <span class="val" id="xpVal">0</span>
+                  <span class="lbl">Total XP</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="level-progress-container">
+              <div class="progress-labels">
+                <span id="currentLevelLbl">Level 3</span>
+                <span id="xpRemainingLbl">450 XP to Level 4</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div
+                  class="progress-bar-fill"
+                  id="xpFill"
+                  style="width: 30%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="profile-body-container">
+        <!-- 2️⃣ Performance Snapshot -->
+        <section class="snapshot-section slide-up">
+          <h2 class="section-title">
+            <i data-lucide="bar-chart-3"></i>
+            Performance Snapshot
+          </h2>
+          <div class="snapshot-grid">
+            <div class="snap-box blue">
+              <div class="snap-icon-container">
+                <div class="snap-icon"><i data-lucide="clock"></i></div>
+                <div class="snap-hdr">Quizzes Taken</div>
+              </div>
+              <div class="snap-info">
+                <span class="snap-val" id="snapQuizzes">0</span>
+                <span class="snap-lbl">Quizzes Taken</span>
+              </div>
+            </div>
+            <div class="snap-box emerald">
+              <div class="snap-icon-container">
+                <div class="snap-icon"><i data-lucide="target"></i></div>
+                <div class="snap-hdr">Average Score</div>
+              </div>
+              <div class="snap-info">
+                <span class="snap-val" id="snapAvgScore">0%</span>
+                <span class="snap-lbl">Avg. Score</span>
+              </div>
+            </div>
+            <div class="snap-box amber">
+              <div class="snap-icon-container">
+                <div class="snap-icon"><i data-lucide="award"></i></div>
+                <div class="snap-hdr">Best Score</div>
+              </div>
+              <div class="snap-info">
+                <span class="snap-val" id="snapBestScore">0%</span>
+                <span class="snap-lbl">Best Score</span>
+              </div>
+            </div>
+            <div class="snap-box purple">
+              <div class="snap-icon-container">
+                <div class="snap-icon"><i data-lucide="book"></i></div>
+                <div class="snap-hdr">Categories</div>
+              </div>
+              <div class="snap-info">
+                <span class="snap-val" id="snapCategories">0</span>
+                <span class="snap-lbl">Categories</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="profile-layout-grid">
+          <!-- Main Content (Left) -->
+          <div class="profile-col-main">
+            <!-- 3️⃣ Activity Calendar -->
+            <section class="card-panel activity-card slide-up delay-100">
+              <div class="panel-header calendar-header">
+                <div class="header-left">
+                  <h2 class="panel-title">
+                    <i data-lucide="calendar"></i>
+                    Activity Calendar
+                  </h2>
+                </div>
+                <div class="header-right heatmap-pagination">
+                  <button
+                    id="prevMonthBtn"
+                    class="heat-nav-btn"
+                    title="Previous Month"
+                  >
+                    <i data-lucide="chevron-left"></i>
+                  </button>
+                  <span id="currentMonthYear" class="current-month-display"
+                    >March 2026</span
+                  >
+                  <button
+                    id="nextMonthBtn"
+                    class="heat-nav-btn"
+                    title="Next Month"
+                  >
+                    <i data-lucide="chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="calendar-main-body">
+                <div class="heatmap-container">
+                  <div class="day-labels">
+                    <div class="day-label"></div>
+                    <div class="day-label">Mon</div>
+                    <div class="day-label"></div>
+                    <div class="day-label">Wed</div>
+                    <div class="day-label"></div>
+                    <div class="day-label">Fri</div>
+                    <div class="day-label"></div>
+                  </div>
+                  <div class="activity-heatmap" id="activityHeatmap">
+                    <!-- Heatmap dots generated via JS -->
+                  </div>
+                </div>
+
+                <div class="month-stats-panel">
+                  <div class="month-stat-item">
+                    <span class="m-val" id="monthTotal">0</span>
+                    <span class="m-lbl">Quizzes Taken</span>
+                  </div>
+                  <div class="month-stat-item">
+                    <span class="m-val" id="monthAccuracy">0%</span>
+                    <span class="m-lbl">Avg. Accuracy</span>
+                  </div>
+                  <div class="month-stat-item">
+                    <span class="m-val" id="monthBestDay">--</span>
+                    <span class="m-lbl">Best Active Day</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="calendar-footer">
+                <p class="heatmap-footer">Activity summary for March 2026</p>
+                <div class="heatmap-legend">
+                  <span>Less</span>
+                  <div class="legend-dots">
+                    <div class="dot level-0"></div>
+                    <div class="dot level-1"></div>
+                    <div class="dot level-2"></div>
+                    <div class="dot level-3"></div>
+                    <div class="dot level-4"></div>
+                  </div>
+                  <span>More</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- 4️⃣ Personal Progress -->
+            <section class="card-panel slide-up delay-200">
+              <h2 class="panel-title">
+                <i data-lucide="zap"></i>
+                Personal Progress
+              </h2>
+              <div class="progress-details-list">
+                <div class="prog-item bg-emerald">
+                  <div class="prog-left">
+                    <div class="prog-icon-bg">
+                      <i data-lucide="trending-up"></i>
+                    </div>
+                    <div class="prog-text">
+                      <span class="prog-lbl">Strongest Category</span>
+                      <span class="prog-val" id="strongestCat">Science</span>
+                    </div>
+                  </div>
+                  <div class="prog-right">
+                    <span class="rank-tag">Top 10%</span>
+                  </div>
+                </div>
+
+                <div class="prog-item bg-rose">
+                  <div class="prog-left">
+                    <div class="prog-icon-bg">
+                      <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <div class="prog-text">
+                      <span class="prog-lbl">Needs Improvement</span>
+                      <span class="prog-val" id="weakestCat">Geography</span>
+                    </div>
+                  </div>
+                  <div class="prog-right">
+                    <button class="btn-practice">Practice Now</button>
+                  </div>
+                </div>
+
+                <div class="prog-item bg-blue">
+                  <div class="prog-left">
+                    <div class="prog-icon-bg"><i data-lucide="clock"></i></div>
+                    <div class="prog-text">
+                      <span class="prog-lbl">Avg. Completion Time</span>
+                      <span class="prog-val" id="avgTime">3m 12s</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Side Panels (Right) -->
+          <div class="profile-col-side">
+            <!-- 5️⃣ Activity Summary -->
+            <section class="card-panel slide-in-right delay-200">
+              <h2 class="panel-title">
+                <i data-lucide="history"></i>
+                Activity Summary
+              </h2>
+              <div class="timeline-summary">
+                <div class="timeline-item">
+                  <div class="timeline-dot-icon">
+                    <i data-lucide="calendar"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <span class="timeline-lbl">Last Attempt</span>
+                    <span class="timeline-val" id="lastAttemptDate"
+                      >Feb 27, 2026</span
+                    >
+                  </div>
+                </div>
+                <div class="timeline-item" id="dailyStatusItem">
+                  <div class="timeline-dot-icon">
+                    <i data-lucide="check-circle-2"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <span class="timeline-lbl">Daily Quiz</span>
+                    <span class="timeline-val" id="dailyStatusText"
+                      >Completed Today</span
+                    >
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot-icon color-purple">
+                    <i data-lucide="target"></i>
+                  </div>
+                  <div class="timeline-info">
+                    <span class="timeline-lbl">Favorite Category</span>
+                    <span class="timeline-val" id="favoriteCat"
+                      >General Knowledge</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 6️⃣ Account Settings -->
+            <section class="card-panel slide-in-right delay-300">
+              <h2 class="panel-title">
+                <i data-lucide="settings"></i>
+                Account Settings
+              </h2>
+              <div class="settings-list">
+                <button class="setting-btn" id="editUsernameTrigger">
+                  <span class="btn-main"
+                    ><i data-lucide="edit-2"></i> Edit Username</span
+                  >
+                  <i data-lucide="chevron-right"></i>
+                </button>
+                <button class="setting-btn" id="changeAvatarTrigger">
+                  <span class="btn-main"
+                    ><i data-lucide="camera"></i> Change Avatar</span
+                  >
+                  <i data-lucide="chevron-right"></i>
+                </button>
+                <div class="settings-divider"></div>
+                <button class="setting-btn reset-btn" id="resetProgressBtn">
+                  <span class="btn-main"
+                    ><i data-lucide="refresh-cw"></i> Reset Progress</span
+                  >
+                </button>
+                <div class="settings-divider"></div>
+                <button class="setting-btn reset-btn" id="logoutBtn">
+                  <span class="btn-main"
+                    ><i data-lucide="log-out" style="color: #f43f5e"></i>
+                    <span style="color: #f43f5e">Log Out</span></span
+                  >
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Reset Confirmation Modal -->
+    <div id="resetModal" class="modal-overlay hidden">
+      <div class="modal-card">
+        <div class="modal-icon-bg red">
+          <i data-lucide="alert-triangle"></i>
+        </div>
+        <h3>Reset All Progress?</h3>
+        <p>
+          This will permanently delete your quiz history, streak, and XP. This
+          action cannot be undone.
+        </p>
+        <div class="modal-actions">
+          <button id="cancelReset" class="btn-modal-ghost">Cancel</button>
+          <button id="confirmReset" class="btn-modal-danger">Yes, Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+      <a href="home.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="dashboard.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="layers"></i></div>
+        <span>Explore</span>
+      </a>
+      <a href="profile.html" class="nav-item active">
+        <div class="nav-icon"><i data-lucide="user"></i></div>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/profile.js"></script>
+  </body>
+</html>

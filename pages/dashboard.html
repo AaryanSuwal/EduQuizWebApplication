@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - EduQuiz</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Desktop Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <h2>EduQuiz</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav custom-scrollbar">
+        <!-- General -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">General</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="home.html"
+                ><i data-lucide="home"></i> <span>Home</span></a
+              >
+            </li>
+            <li>
+              <a href="dashboard.html" class="active"
+                ><i data-lucide="layout-dashboard"></i>
+                <span>Dashboard</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Learning -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Learning</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="categories.html"
+                ><i data-lucide="grid"></i> <span>Categories</span></a
+              >
+            </li>
+            <li>
+              <a href="daily-quiz.html"
+                ><i data-lucide="calendar"></i> <span>Daily Quiz</span></a
+              >
+            </li>
+            <li>
+              <a href="history.html"
+                ><i data-lucide="history"></i> <span>History</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Account</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="profile.html"
+                ><i data-lucide="user"></i> <span>Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="settings.html"
+                ><i data-lucide="settings"></i> <span>Settings</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="nav-group">
+          <h3 class="nav-group-title">Support</h3>
+          <ul class="nav-links">
+            <li>
+              <a href="feedback.html"
+                ><i data-lucide="message-square"></i> <span>Feedback</span></a
+              >
+            </li>
+            <li>
+              <a href="help-center.html"
+                ><i data-lucide="help-circle"></i> <span>Help Center</span></a
+              >
+            </li>
+            <li>
+              <a href="privacy.html"
+                ><i data-lucide="shield"></i> <span>Privacy</span></a
+              >
+            </li>
+            <li>
+              <a href="terms.html"
+                ><i data-lucide="file-text"></i> <span>Terms</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="profile.html" class="profile-link">
+          <div class="profile-img-container">
+            <img
+              src="https://picsum.photos/seed/alex/100/100"
+              alt="Profile"
+              class="profile-img"
+            />
+            <div class="online-indicator"></div>
+          </div>
+          <div class="profile-info">
+            <p class="profile-name">Alex Morgan</p>
+            <span class="profile-plan">Pro Plan</span>
+          </div>
+          <i data-lucide="chevron-right" class="profile-arrow"></i>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+      <div class="brand-container">
+        <div class="brand-icon mobile">
+          <i data-lucide="brain"></i>
+        </div>
+        <span class="brand-name">EduQuiz</span>
+      </div>
+      <div class="mobile-profile">
+        <img src="https://picsum.photos/seed/alex/100/100" alt="Profile" />
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <div class="dashboard-container">
+        <!-- Section 1: Welcome & Settings -->
+        <section class="welcome-section fade-in">
+          <div class="welcome-header">
+            <div>
+              <h1 class="welcome-title">Welcome back, Alex</h1>
+              <p class="welcome-subtitle">Let's improve your score today.</p>
+            </div>
+
+            <div class="settings-shortcut relative">
+              <button
+                id="dashboardSettingsBtn"
+                class="settings-btn"
+                title="Dashboard Settings"
+              >
+                <i data-lucide="settings"></i>
+              </button>
+
+              <!-- Settings Dropdown -->
+              <div id="settingsDropdown" class="settings-dropdown hidden">
+                <div class="dropdown-header">
+                  <h3><i data-lucide="layout"></i> Dashboard View</h3>
+                  <p>Customize your layout</p>
+                </div>
+                <div class="dropdown-body">
+                  <label class="toggle-row">
+                    <div class="toggle-label">
+                      <i data-lucide="medal"></i>
+                      <span>Achievements</span>
+                    </div>
+                    <div
+                      class="toggle-switch active"
+                      id="toggleAchievements"
+                    ></div>
+                  </label>
+                  <label class="toggle-row">
+                    <div class="toggle-label">
+                      <i data-lucide="clock"></i>
+                      <span>Recent Activity</span>
+                    </div>
+                    <div
+                      class="toggle-switch active"
+                      id="toggleRecentActivity"
+                    ></div>
+                  </label>
+                  <label class="toggle-row">
+                    <div class="toggle-label">
+                      <i data-lucide="trending-up"></i>
+                      <span>Performance</span>
+                    </div>
+                    <div
+                      class="toggle-switch active"
+                      id="togglePerformance"
+                    ></div>
+                  </label>
+                  <label class="toggle-row">
+                    <div class="toggle-label">
+                      <i data-lucide="layout"></i>
+                      <span>Compact Mode</span>
+                    </div>
+                    <div class="toggle-switch" id="toggleCompact"></div>
+                  </label>
+                </div>
+                <div class="dropdown-footer">
+                  <button class="btn-refresh" id="refreshBtn">
+                    <i data-lucide="refresh-cw"></i> Refresh Data
+                  </button>
+                  <a href="settings.html" class="link-full-settings"
+                    >Full Settings <i data-lucide="external-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid" id="statsGrid">
+            <!-- Cards will adjust based on compact mode -->
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon-wrapper blue">
+                  <i data-lucide="target"></i>
+                </div>
+              </div>
+              <div class="stat-value">42</div>
+              <div class="stat-label">Total Quizzes</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon-wrapper green">
+                  <i data-lucide="bar-chart-3"></i>
+                </div>
+              </div>
+              <div class="stat-value">78%</div>
+              <div class="stat-label">Average Score</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon-wrapper yellow">
+                  <i data-lucide="trophy"></i>
+                </div>
+              </div>
+              <div class="stat-value">95%</div>
+              <div class="stat-label">Highest Score</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-header">
+                <div class="stat-icon-wrapper orange">
+                  <i data-lucide="flame"></i>
+                </div>
+                <span class="hot-badge">HOT</span>
+              </div>
+              <div class="stat-value">5 Days</div>
+              <div class="stat-label">Current Streak</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Quick Actions -->
+        <section class="quick-actions-section slide-up delay-100">
+          <div class="section-title-wrapper">
+            <h2>Quick Actions</h2>
+            <div class="flow-hint hidden-sm">
+              <i data-lucide="info"></i> Flow: Category → Mode → Difficulty →
+              Start
+            </div>
+          </div>
+
+          <div class="quick-actions-grid" id="quickActionsGrid">
+            <!-- Action 1 -->
+            <button class="action-card primary">
+              <div class="action-icon-bg"><i data-lucide="target"></i></div>
+              <h3>Start New Quiz</h3>
+              <p>Jump right in</p>
+              <div class="action-hover-icon">
+                <i data-lucide="arrow-up-right"></i>
+              </div>
+              <div class="action-tooltip">
+                Begin a new session with random questions
+              </div>
+            </button>
+            <!-- Action 2 -->
+            <button class="action-card secondary">
+              <div class="action-icon-bg"><i data-lucide="book-open"></i></div>
+              <h3>Choose Category</h3>
+              <p>Explore topics</p>
+              <div class="action-hover-icon">
+                <i data-lucide="arrow-up-right"></i>
+              </div>
+              <div class="action-tooltip">
+                Browse specific topics to focus your learning
+              </div>
+            </button>
+            <!-- Action 3 -->
+            <button class="action-card secondary">
+              <div class="action-icon-bg">
+                <i data-lucide="brain-circuit"></i>
+              </div>
+              <h3>Select Game Mode</h3>
+              <p>Challenge yourself</p>
+              <div class="action-hover-icon">
+                <i data-lucide="arrow-up-right"></i>
+              </div>
+              <div class="action-tooltip">
+                Switch between Rapid Fire, True/False, and more
+              </div>
+            </button>
+            <!-- Action 4 -->
+            <button class="action-card secondary">
+              <div class="action-icon-bg">
+                <i data-lucide="bar-chart-3"></i>
+              </div>
+              <h3>View Performance</h3>
+              <p>Track progress</p>
+              <div class="action-hover-icon">
+                <i data-lucide="arrow-up-right"></i>
+              </div>
+              <div class="action-tooltip">
+                Analyze your detailed statistics and progress
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <div class="dashboard-layout" id="mainDashboardLayout">
+          <!-- Left Column (Performance & Activity) -->
+          <div class="col-main" id="performanceCol">
+            <!-- Overall Performance -->
+            <section
+              class="panel-section slide-in-left delay-200"
+              id="performanceSection"
+            >
+              <div class="panel-header">
+                <h2>Overall Performance</h2>
+                <div class="trend-badge positive">
+                  <i data-lucide="trending-up"></i> +5% from last week
+                </div>
+              </div>
+
+              <div class="performance-main">
+                <div class="acc-val">72%</div>
+                <div class="acc-label">Accuracy Rate</div>
+              </div>
+
+              <div class="progress-bar-wrapper">
+                <div class="progress-bar-fill" style="width: 72%"></div>
+              </div>
+
+              <div class="performance-stats-grid">
+                <div class="perf-stat-box green">
+                  <div class="perf-stat-header">
+                    <i data-lucide="check-circle-2"></i> Correct
+                  </div>
+                  <div class="perf-stat-val">850</div>
+                </div>
+                <div class="perf-stat-box red">
+                  <div class="perf-stat-header">
+                    <i data-lucide="x-circle"></i> Incorrect
+                  </div>
+                  <div class="perf-stat-val">120</div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="panel-section" id="recentActivitySection">
+              <div class="panel-header">
+                <h2>Recent Activity</h2>
+                <button class="btn-link">View All</button>
+              </div>
+              <div class="activity-list">
+                <!-- Item list -->
+                <div class="activity-item">
+                  <div class="activity-info">
+                    <div class="activity-score emerald">85%</div>
+                    <div>
+                      <h4>Science</h4>
+                      <p>Multiple Choice</p>
+                    </div>
+                  </div>
+                  <div class="activity-meta">
+                    <div class="activity-date">2 hours ago</div>
+                    <i data-lucide="chevron-right" class="chevron"></i>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-info">
+                    <div class="activity-score blue">70%</div>
+                    <div>
+                      <h4>Mathematics</h4>
+                      <p>Rapid Fire</p>
+                    </div>
+                  </div>
+                  <div class="activity-meta">
+                    <div class="activity-date">Yesterday</div>
+                    <i data-lucide="chevron-right" class="chevron"></i>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-info">
+                    <div class="activity-score amber">65%</div>
+                    <div>
+                      <h4>History</h4>
+                      <p>True / False</p>
+                    </div>
+                  </div>
+                  <div class="activity-meta">
+                    <div class="activity-date">2 days ago</div>
+                    <i data-lucide="chevron-right" class="chevron"></i>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-info">
+                    <div class="activity-score purple">90%</div>
+                    <div>
+                      <h4>Technology</h4>
+                      <p>Fill in Blanks</p>
+                    </div>
+                  </div>
+                  <div class="activity-meta">
+                    <div class="activity-date">3 days ago</div>
+                    <i data-lucide="chevron-right" class="chevron"></i>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Quiz Details (Last Played) -->
+            <section class="panel-section">
+              <div class="panel-header">
+                <h2>Quiz Details</h2>
+                <span class="badge-neutral">Last Played</span>
+              </div>
+
+              <div class="last-played-content">
+                <!-- Score Circle -->
+                <div
+                  class="score-circle-wrapper emerald"
+                  style="--score-angle: 306deg"
+                >
+                  <div class="score-circle">
+                    <div class="score-text">
+                      <span class="val">85%</span>
+                      <span class="lbl">Score</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Details Grid -->
+                <div class="last-played-details">
+                  <div class="detail-box">
+                    <div class="lbl">Category</div>
+                    <div class="val">Science</div>
+                  </div>
+                  <div class="detail-box">
+                    <div class="lbl">Game Mode</div>
+                    <div class="val">Multiple Choice</div>
+                  </div>
+                  <div class="detail-box">
+                    <div class="lbl">Date Completed</div>
+                    <div class="val">2 hours ago</div>
+                  </div>
+                  <div class="detail-box">
+                    <div class="lbl">Status</div>
+                    <div class="val text-emerald">Passed</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Column (Breakdown & Achievements) -->
+          <div class="col-side slide-in-right delay-300">
+            <!-- Category Breakdown -->
+            <section class="panel-section" id="breakdownSection">
+              <h2>Category Breakdown</h2>
+              <div class="breakdown-list">
+                <div class="breakdown-item">
+                  <div class="bd-header">
+                    <span class="bd-name">Science</span>
+                    <span class="bd-val">82%</span>
+                  </div>
+                  <div class="bd-bar-bg">
+                    <div
+                      class="bd-bar-fill bg-emerald"
+                      style="width: 82%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="bd-header">
+                    <span class="bd-name">Mathematics</span>
+                    <span class="bd-val">74%</span>
+                  </div>
+                  <div class="bd-bar-bg">
+                    <div class="bd-bar-fill bg-blue" style="width: 74%"></div>
+                  </div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="bd-header">
+                    <span class="bd-name">History</span>
+                    <span class="bd-val">68%</span>
+                  </div>
+                  <div class="bd-bar-bg">
+                    <div class="bd-bar-fill bg-amber" style="width: 68%"></div>
+                  </div>
+                  <div class="bd-warning">Needs Improvement</div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="bd-header">
+                    <span class="bd-name">Technology</span>
+                    <span class="bd-val">80%</span>
+                  </div>
+                  <div class="bd-bar-bg">
+                    <div class="bd-bar-fill bg-purple" style="width: 80%"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Achievements Widget -->
+            <section class="panel-section" id="achievementsSection">
+              <div class="panel-header">
+                <h2>Achievements</h2>
+                <i data-lucide="medal" class="text-indigo"></i>
+              </div>
+              <div class="achievements-mini-grid">
+                <!-- Unlocked -->
+                <div class="achievement-mini unlocked">
+                  <div class="ach-icon">
+                    <i data-lucide="check-circle-2"></i>
+                  </div>
+                  <span>First Steps</span>
+                </div>
+                <div class="achievement-mini unlocked">
+                  <div class="ach-icon"><i data-lucide="target"></i></div>
+                  <span>Learner</span>
+                </div>
+                <!-- Locked -->
+                <div class="achievement-mini locked">
+                  <div class="ach-icon"><i data-lucide="award"></i></div>
+                  <span>Quiz Master</span>
+                </div>
+                <div class="achievement-mini unlocked">
+                  <div class="ach-icon"><i data-lucide="trophy"></i></div>
+                  <span>High Flyer</span>
+                </div>
+                <div class="achievement-mini locked">
+                  <div class="ach-icon"><i data-lucide="star"></i></div>
+                  <span>Perfectionist</span>
+                </div>
+                <div class="achievement-mini unlocked">
+                  <div class="ach-icon"><i data-lucide="flame"></i></div>
+                  <span>On Fire</span>
+                </div>
+              </div>
+              <div class="achievements-footer">
+                <button id="viewAllAchievementsBtn" class="btn-subtle">
+                  View All Achievements
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements Modal -->
+      <div id="achievementsModal" class="modal-overlay hidden">
+        <div class="modal-content achievements-modal zoom-in">
+          <div class="modal-header">
+            <div>
+              <h2>All Achievements</h2>
+              <p>Track your learning milestones and progress.</p>
+            </div>
+            <button class="modal-close" id="closeAchievementsModal">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+          <div class="modal-body custom-scrollbar">
+            <!-- Progress Category -->
+            <div class="ach-category">
+              <h3><i data-lucide="target" class="text-indigo"></i> Progress</h3>
+              <div class="ach-grid">
+                <!-- Ach Card -->
+                <div class="ach-card unlocked">
+                  <div class="ach-card-icon">
+                    <i data-lucide="check-circle-2"></i>
+                  </div>
+                  <div class="ach-card-info">
+                    <div class="ach-card-header">
+                      <h4>First Steps</h4>
+                      <div class="ach-badge unlocked">
+                        <i data-lucide="unlock"></i> Oct 15, 2023
+                      </div>
+                    </div>
+                    <p>Complete your first quiz</p>
+                    <div class="ach-progress">
+                      <div class="progress-bar-bg">
+                        <div
+                          class="progress-bar-fill"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                      <span>1 / 1</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Ach Card -->
+                <div class="ach-card unlocked">
+                  <div class="ach-card-icon"><i data-lucide="target"></i></div>
+                  <div class="ach-card-info">
+                    <div class="ach-card-header">
+                      <h4>Dedicated Learner</h4>
+                      <div class="ach-badge unlocked">
+                        <i data-lucide="unlock"></i> Nov 02, 2023
+                      </div>
+                    </div>
+                    <p>Complete 10 quizzes</p>
+                    <div class="ach-progress">
+                      <div class="progress-bar-bg">
+                        <div
+                          class="progress-bar-fill"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                      <span>10 / 10</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Ach Card locked -->
+                <div class="ach-card locked">
+                  <div class="ach-card-icon"><i data-lucide="award"></i></div>
+                  <div class="ach-card-info">
+                    <div class="ach-card-header">
+                      <h4>Quiz Master</h4>
+                      <div class="ach-badge locked">
+                        <i data-lucide="lock"></i> Locked
+                      </div>
+                    </div>
+                    <p>Complete 50 quizzes</p>
+                    <div class="ach-progress">
+                      <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 84%"></div>
+                      </div>
+                      <span>42 / 50</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Performance Category -->
+            <div class="ach-category">
+              <h3>
+                <i data-lucide="trophy" class="text-amber"></i> Performance
+              </h3>
+              <div class="ach-grid">
+                <div class="ach-card unlocked">
+                  <div class="ach-card-icon"><i data-lucide="trophy"></i></div>
+                  <div class="ach-card-info">
+                    <div class="ach-card-header">
+                      <h4>High Flyer</h4>
+                      <div class="ach-badge unlocked">
+                        <i data-lucide="unlock"></i> Oct 20, 2023
+                      </div>
+                    </div>
+                    <p>Score 90% or higher in a quiz</p>
+                    <div class="ach-progress">
+                      <div class="progress-bar-bg">
+                        <div
+                          class="progress-bar-fill"
+                          style="width: 100%"
+                        ></div>
+                      </div>
+                      <span>1 / 1</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ach-card locked">
+                  <div class="ach-card-icon"><i data-lucide="star"></i></div>
+                  <div class="ach-card-info">
+                    <div class="ach-card-header">
+                      <h4>Perfectionist</h4>
+                      <div class="ach-badge locked">
+                        <i data-lucide="lock"></i> Locked
+                      </div>
+                    </div>
+                    <p>Get a perfect 100% score</p>
+                    <div class="ach-progress">
+                      <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 0%"></div>
+                      </div>
+                      <span>0 / 1</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+      <a href="home.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="dashboard.html" class="nav-item active">
+        <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+        <span>Dashboard</span>
+      </a>
+      <a href="categories.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="grid"></i></div>
+        <span>Categories</span>
+      </a>
+      <a href="profile.html" class="nav-item">
+        <div class="nav-icon"><i data-lucide="user"></i></div>
+        <span>Profile</span>
+      </a>
+    </div>
+
+    <!-- External JS -->
+    <script src="../javascript/main.js"></script>
+    <script src="../javascript/dashboard.js"></script>
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
