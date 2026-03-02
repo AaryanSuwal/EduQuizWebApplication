@@ -232,8 +232,8 @@
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
-  background: var(--slate-100);
+  height: 2px;
+  background: var(--slate-200);
   top: 50%;
   z-index: 1;
 }
@@ -280,6 +280,7 @@
 
 /* Rights Grid */
 .rights-grid {
+  margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;

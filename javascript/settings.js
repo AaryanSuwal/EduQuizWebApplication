@@ -214,22 +214,26 @@ document.addEventListener("DOMContentLoaded", () => {
   if (cancelPasswordBtn)
     cancelPasswordBtn.onclick = () => togglePasswordModal(false);
 
-  // --- 5.1 Password Visibility Toggles ---
+  // --- 5.1 Password Visibility Toggles (enhanced) ---
+  // use manual icon replacement to avoid full lucide re-render jump
   document.querySelectorAll(".btn-toggle-pass").forEach((btn) => {
-    btn.onclick = () => {
-      const targetId = btn.getAttribute("data-target");
-      const input = document.getElementById(targetId);
-      const icon = btn.querySelector("i");
+    btn.addEventListener("click", function () {
+      const input = this.parentElement.querySelector("input");
+      if (!input) return;
 
-      if (input.type === "password") {
-        input.type = "text";
-        icon.setAttribute("data-lucide", "eye-off");
-      } else {
-        input.type = "password";
-        icon.setAttribute("data-lucide", "eye");
-      }
+      // flip type
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+
+      // determine new icon and swap node manually
+      const newIconData = isPassword ? "eye" : "eye-off";
+      const newIcon = document.createElement("i");
+      newIcon.setAttribute("data-lucide", newIconData);
+      this.innerHTML = "";
+      this.appendChild(newIcon);
+
       if (window.lucide) lucide.createIcons();
-    };
+    });
   });
 
   // --- 5.2 Forgot Password Handler ---

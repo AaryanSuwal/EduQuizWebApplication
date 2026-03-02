@@ -179,6 +179,12 @@
   gap: 2.5rem;
 }
 
+.values-grid .value-card:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 350px;
+}
+
 .value-card {
   background: white;
   padding: 3.5rem 2.5rem;
@@ -282,6 +288,12 @@
   margin-bottom: 1.5rem;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
 .social-btn {
   display: inline-flex;
   padding: 0.75rem;
@@ -293,7 +305,14 @@
 
 .social-btn:hover {
   background: #0a66c2;
-  color: white;
+  color: var(--slate-200);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(10, 102, 194, 0.2);
+}
+
+.github:hover {
+  background: var(--slate-600);
+  color: var(--slate-200);
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(10, 102, 194, 0.2);
 }

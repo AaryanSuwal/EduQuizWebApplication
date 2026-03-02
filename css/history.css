@@ -92,6 +92,7 @@
 .history-header-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
@@ -100,15 +101,15 @@
   position: relative;
 }
 
-.search-box i {
+.search-box svg {
   position: absolute;
   left: 0.875rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 1.1rem; /* Slightly larger icon */
+  width: 1.1rem;
   height: 1.1rem;
   color: var(--slate-400);
-  stroke-width: 1.5px; /* Thinner stroke for a more premium look */
+  stroke-width: 1.5px;
   pointer-events: none;
 }
 
@@ -118,7 +119,7 @@
   border-radius: 0.5rem;
   font-size: 0.9375rem;
   font-family: inherit;
-  background: #f9fafb; /* Softer background as seen in the image */
+  background: #f9fafb;
   color: var(--slate-700);
   width: 260px;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -209,7 +210,7 @@
   flex-shrink: 0;
 }
 
-.stat-icon-wrapper i {
+.stat-icon-wrapper svg {
   width: 1.25rem;
   height: 1.25rem;
 }

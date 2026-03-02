@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       input.type = isPassword ? "text" : "password";
 
       // Change icon name for Lucide re-render
-      const newIconData = isPassword ? "eye-off" : "eye";
+      const newIconData = isPassword ? "eye" : "eye-off";
 
       // Replace existing icon node manually to avoid full re-render jump
       const newIcon = document.createElement("i");

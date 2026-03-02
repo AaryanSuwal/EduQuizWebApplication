@@ -198,8 +198,8 @@
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
-  background: var(--slate-100);
+  height: 2px;
+  background: var(--slate-300);
   top: 50%;
   z-index: 1;
 }

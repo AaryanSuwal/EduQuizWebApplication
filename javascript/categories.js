@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     categoriesGrid.innerHTML = filtered
       .map((cat, idx) => {
         const catStats = getCategoryStats(cat.id);
-        const colorClass = cat.color.split(" ")[0]; // e.g. bg-emerald-100
+        const colorClass = cat.color.split(" ")[0];
 
         return `
                 <div class="category-card slide-up" data-category-id="${cat.id}" style="animation-delay: ${idx * 0.05}s">
@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
           strongCat = { name: catName, accuracy: Math.round(accuracy) };
         }
 
-        if (catStats.attempts >= 3 && accuracy < lowestAcc) {
+        if (accuracy < lowestAcc) {
           lowestAcc = accuracy;
           weakCat = { name: catName, accuracy: Math.round(accuracy) };
         }
@@ -397,6 +397,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             <button class="format-btn">
                                 <i data-lucide="type"></i>
                                 <span>Fill Blanks</span>
+                            </button>
+                            <button class="format-btn">
+                                <i data-lucide="flame"></i>
+                                <span>Rapid Fire</span>
                             </button>
                         </div>
                     </div>
