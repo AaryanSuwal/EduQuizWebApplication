@@ -19,32 +19,9 @@
 body {
   background: var(--bg-deep);
   color: var(--text-main);
-  min-height: 100vh;
+  height: 100vh;
   overflow-x: hidden;
   position: relative;
-}
-
-/* Background Glows */
-body::before,
-body::after {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--primary-glow), transparent 70%);
-  z-index: -1;
-  filter: blur(80px);
-}
-
-body::before {
-  top: -100px;
-  right: -100px;
-}
-
-body::after {
-  bottom: -100px;
-  left: -100px;
 }
 
 /* Navbar */
